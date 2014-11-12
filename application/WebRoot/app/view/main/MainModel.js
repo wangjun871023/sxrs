@@ -12,7 +12,8 @@ Ext.define('app.view.main.MainModel', {
 		system : {
 			name : '山西人寿',
 			version : 'version 1.0.0',
-			iconUrl : 'resources/imgs/chinalife.gif'
+			iconTopUrl : 'resources/imgs/chinalife.gif',
+			iconBottomUrl : 'resources/imgs/bottom_bg.gif'
 		}
 	}
 

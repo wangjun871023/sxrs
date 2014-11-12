@@ -1,6 +1,8 @@
 Ext.define('app.view.main.Main', {
 	extend : 'Ext.container.Container',
-	requires : [ 'app.view.main.MainController', 'app.view.main.region.Top',
+	requires : [ 'app.view.main.MainController', 
+	             'app.view.main.region.Top',
+	             'app.view.main.region.Bottom',
 			'app.view.main.MainModel' ],
 	xtype : 'app-main',
 	controller : 'main',
@@ -18,8 +20,11 @@ Ext.define('app.view.main.Main', {
 		region : 'center',
 		xtype : 'panel',
 		items : [ {
-			title : 'Tab 1',
 			html : '<h2>Content appropriate for the current navigation.</h2>'
 		} ]
+	},{
+		xtype : 'mainbottom',
+		region : 'south',
+		height : 80
 	} ]
 });

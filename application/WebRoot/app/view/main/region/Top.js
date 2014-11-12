@@ -7,8 +7,8 @@ Ext.define("app.view.main.region.Top", {
 	items : [ {
 		xtype : "image",
 		bind : {
-			hidden : "{!system.iconUrl}",
-			src : "{system.iconUrl}"
+			hidden : "{!system.iconTopUrl}",
+			src : "{system.iconTopUrl}"
 		}
 	} ]
 });
