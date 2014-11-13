@@ -1,5 +1,5 @@
-Ext.define("app.view.main.region.Login", {
-	extend : "Ext.panel.Panel",
+Ext.define("app.view.main.login.Login", {
+	extend : "Ext.form.Panel",
 	alias : "widget.mainlogin",
 	items : [  {
 		fieldLabel : 'username',
@@ -11,5 +11,11 @@ Ext.define("app.view.main.region.Login", {
 		xtype : 'textfield',
 		name : 'password',
 		emptyText : 'Enter a value'
+	},{
+		xtype : 'button',
+		text: '登录'
+	},{
+		xtype : 'button',
+		text: '重置'
 	} ]
 });
