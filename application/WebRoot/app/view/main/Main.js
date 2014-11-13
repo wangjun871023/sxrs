@@ -20,6 +20,7 @@ Ext.define('app.view.main.Main', {
 		region : 'center',
 		xtype : 'panel',
 		items : [ {
+			title : 'Tab 1',
 			html : '<h2>Content appropriate for the current navigation.</h2>'
 		} ]
 	},{
