@@ -24,6 +24,7 @@ Ext.define("app.view.main.region.Center", {
 		} ]
 	}, {
 		xtype : "tabpanel",
+		height : 200,
 		items : [ {
 			title : '热点关注',
 			html : '热点关注'

@@ -21,10 +21,6 @@ Ext.define("app.view.main.region.Right", {
 			xtype : "image",
 			src : "resources/attentions/3.bmp",
 			height : 100
-		}, {
-			xtype : "image",
-			src : "resources/attentions/4.jpg",
-			height : 100
-		} ]
+		}]
 	} ]
 });
