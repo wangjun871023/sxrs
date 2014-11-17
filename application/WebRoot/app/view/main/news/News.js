@@ -6,7 +6,7 @@ Ext.define("app.view.main.news.News", {
 	alias : "widget.mainNews",
 	id:"mainNews",
 	bodyStyle: {  
-        "background-image": "url(resources/news/news1.jpg)",
+        "background-image": "url(app/view/main/news/images/1.jpg)",
         "background-repeat": "no-repeat",
         "background-size": "100% 100%"
 	},
@@ -30,20 +30,41 @@ Ext.define("app.view.main.news.News", {
 				text : "1",
 				handler:function(){
 					var obj = Ext.getCmp("mainNews");
-					var object = { "background-image": "url(resources/attentions/1.jpg)",
+					var object = { "background-image": "url(app/view/main/news/images/1.jpg)",
 					        "background-repeat": "no-repeat",
 					        "background-size": "100% 100%"};
 					obj.setBodyStyle(object);
 				}
 			}, {
 				xtype : "button",
-				text : "2"
+				text : "2",
+				handler:function(){
+					var obj = Ext.getCmp("mainNews");
+					var object = { "background-image": "url(app/view/main/news/images/2.jpg)",
+					        "background-repeat": "no-repeat",
+					        "background-size": "100% 100%"};
+					obj.setBodyStyle(object);
+				}
 			}, {
 				xtype : "button",
-				text : "3"
+				text : "3",
+				handler:function(){
+					var obj = Ext.getCmp("mainNews");
+					var object = { "background-image": "url(app/view/main/news/images/3.jpg)",
+					        "background-repeat": "no-repeat",
+					        "background-size": "100% 100%"};
+					obj.setBodyStyle(object);
+				}
 			}, {
 				xtype : "button",
-				text : "4"
+				text : "4",
+				handler:function(){
+					var obj = Ext.getCmp("mainNews");
+					var object = { "background-image": "url(app/view/main/news/images/4.jpg)",
+					        "background-repeat": "no-repeat",
+					        "background-size": "100% 100%"};
+					obj.setBodyStyle(object);
+				}
 			}]
 		}]
 		
