@@ -6,7 +6,7 @@ Ext.define('app.view.main.Main', {
 			'app.view.main.region.Center', 'app.view.main.MainModel' ],
 	xtype : 'app-main',
 	controller : 'main',
-	autoScroll : true,
+	overflowY : "scroll",
 	viewModel : {
 		type : 'main'
 	},
@@ -14,31 +14,36 @@ Ext.define('app.view.main.Main', {
 		type : 'hbox'
 	},
 	items : [ {
-		xtype:"panel",
-		flex:1
-	},{
-		flex:4,
+		xtype : "panel",
+		flex : 1
+	}, {
+		xtype : "panel",
+		width : 1024,
 		items : [ {
 			xtype : 'maintop',
-			height : 100
+			height : 120
 		}, {
 			layout : "column",
+			bodyPadding : 1,
 			items : [ {
-				columnWidth : 0.2,
+				columnWidth : 0.23,
+				bodyPadding : 1,
 				xtype : "mainleft"
 			}, {
-				columnWidth : 0.5,
+				columnWidth : 0.47,
+				bodyPadding : 1,
 				xtype : "maincenter"
 			}, {
 				columnWidth : 0.3,
+				bodyPadding : 1,
 				xtype : "mainright",
 			} ]
 		}, {
 			xtype : 'mainbottom',
-			height : 100
+			height : 50
 		} ]
-	},{
-		xtype:"panel",
-		flex:1
+	}, {
+		xtype : "panel",
+		flex : 1
 	} ]
 });

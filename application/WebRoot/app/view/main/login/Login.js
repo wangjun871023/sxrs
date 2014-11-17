@@ -6,8 +6,8 @@ Ext.define("app.view.main.login.Login", {
         xtype: 'textfield',
         layout: 'anchor',
         msgTarget: 'side',
-        allowBlank: false,
-        labelWidth:40
+        allowBlank: true,
+        labelWidth:50
     },
 	items : [ {
 		fieldLabel : '用户',
@@ -19,11 +19,16 @@ Ext.define("app.view.main.login.Login", {
 		inputType : 'password',
 		name : 'password'
 	}, {
+		xtype:"combo",
 		fieldLabel : '机构',
+		anchor : '100%',
+		name : 'password'
+	},  {
+		fieldLabel : '验证码',
 		anchor : '100%',
 		inputType : 'password',
 		name : 'password'
-	} ],
+	}],
 	buttons : [ {
 		text : '登录'
 	}, {

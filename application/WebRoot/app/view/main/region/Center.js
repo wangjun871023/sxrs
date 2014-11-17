@@ -1,30 +1,15 @@
 Ext.define("app.view.main.region.Center", {
 	extend : "Ext.panel.Panel",
 	alias : "widget.maincenter",
+	requires : [ 'app.view.main.news.News'],
 	items : [ {
-		xtype : "panel",
+		xtype : "mainNews",
 		title : "图片新闻",
-		items : [ {
-			xtype : "image",
-			src : "resources/news/news1.jpg",
-			width : 200,
-			height : 200
-		}, {
-			xtype : "button",
-			text : "1"
-		}, {
-			xtype : "button",
-			text : "2"
-		}, {
-			xtype : "button",
-			text : "3"
-		}, {
-			xtype : "button",
-			text : "4"
-		} ]
+		height : 240
 	}, {
 		xtype : "tabpanel",
-		height : 200,
+		margin:"5 0 0 0",
+		height : 300,
 		items : [ {
 			title : '热点关注',
 			html : '热点关注'
@@ -42,6 +27,6 @@ Ext.define("app.view.main.region.Center", {
 	}, {
 		xtype : "grid",
 		title : "各部门信息",
-		height : 200
+		height : 300
 	} ]
 });
