@@ -10,7 +10,7 @@ Ext.define("app.view.main.region.Bottom", {
 	items : [
 	    {
 	    	xtype:"label",
-	    	text:"中国人寿"
+	    	text:"版权所有中国人寿保险股份有限公司山西省公司2009-2011"
 	    }
 	]
 });

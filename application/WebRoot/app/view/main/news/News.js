@@ -13,7 +13,18 @@ Ext.define("app.view.main.news.News", {
 	layout:"border",
 	items : [{
 		xtype:"container",
-		region:"center"
+		region:"center",
+		layout:"vbox",
+		bodyPadding : 10,
+		items:[{
+			xtype:"container",
+			flex:10
+		},{
+			xtype:"label",
+			flex:1.5,
+			text:"中国人寿",
+			frame:true	
+		}]
 	},{
 		xtype:"container",
 		region:"east",
@@ -24,6 +35,7 @@ Ext.define("app.view.main.news.News", {
 		},{
 			xtype:"container",
 			flex:1.5,
+			frame:true,
 			bodyPadding : 10,
 			items:[{
 				xtype : "button",
