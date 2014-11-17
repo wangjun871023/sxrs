@@ -40,7 +40,7 @@ Ext.define('app.view.main.Main', {
 			} ]
 		}, {
 			xtype : 'mainbottom',
-			height : 50
+			height : 30
 		} ]
 	}, {
 		xtype : "panel",

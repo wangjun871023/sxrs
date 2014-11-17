@@ -1,6 +1,7 @@
 Ext.define("app.view.main.region.Left", {
 	extend : "Ext.panel.Panel",
 	alias : "widget.mainleft",
+	layout:"vbox",
 	items : [ {
 		xtype : "mainlogin",
 		bodyPadding : 5,
@@ -10,6 +11,7 @@ Ext.define("app.view.main.region.Left", {
 		xtype : "panel",
 		title : "站内导航",
 		margin:"5 0 0 0",
+		flex:1,
 		bodyPadding : 10,
 		defaults:{
 			xtype:"button",

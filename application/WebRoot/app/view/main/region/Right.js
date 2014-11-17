@@ -1,8 +1,9 @@
 Ext.define("app.view.main.region.Right", {
 	extend : "Ext.panel.Panel",
+	requires : [ 'app.view.main.notify.Notify'],
 	alias : "widget.mainright",
 	items : [ {
-		xtype : "grid",
+		xtype : "mainNotify",
 		title : "通知/发文",
 		height : 240
 	}, {
