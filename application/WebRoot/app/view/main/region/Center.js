@@ -26,7 +26,7 @@ Ext.define("app.view.main.region.Center", {
 
 	}, {
 		xtype : "grid",
-		title : "各部门信息",
+		title : "公司各部门信息",
 		height : 300
 	} ]
 });
