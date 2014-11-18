@@ -7,22 +7,35 @@ Ext.define("app.view.main.region.Right", {
 		title : "通知/发文",
 		height : 240
 	}, {
-		xtype : "panel",
 		margin:"5 0 0 0",
+		xtype : "mainNotify",
+		title : "每日更新",
+		height : 300
+	},{
+		xtype : "panel",
 		title : "当前关注",
-		layout : "form",
+		bodyPadding : 2,
+//		layout : "form",
+		layout : {
+			type : "table",
+			columns : 2
+			
+		},
+		defaults:{
+			xtype:"image",
+			bodyPadding : 2,
+			margin:"0 0 0 5",
+			width:140,
+			height : 80
+		},
 		items : [ {
-			xtype : "image",
 			src : "resources/attentions/1.jpg",
-			height : 50
 		}, {
-			xtype : "image",
-			src : "resources/attentions/2.jpg",
-			height : 50
+			src : "resources/attentions/2.bmp",
 		}, {
-			xtype : "image",
-			src : "resources/attentions/3.bmp",
-			height : 50
+			src : "resources/attentions/3.jpg",
+		}, {
+			src : "resources/attentions/4.jpg",
 		}]
 	} ]
 });
