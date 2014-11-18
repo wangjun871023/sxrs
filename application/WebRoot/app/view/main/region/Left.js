@@ -9,7 +9,7 @@ Ext.define("app.view.main.region.Left", {
 		title : "登录山西人寿门户网站"
 	}, {
 		xtype : "panel",
-		title : "站内导航",
+		title : "部门信息",
 		margin:"5 0 0 0",
 		flex:1,
 		bodyPadding : 10,
