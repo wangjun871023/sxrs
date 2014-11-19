@@ -5,6 +5,7 @@ Ext.define('app.view.main.Main', {
 			'app.view.main.region.Left', 'app.view.main.region.Right',
 			'app.view.main.region.Center', 
 			'app.view.main.newsInfo.NewsInfo', 
+			'app.view.main.dept.Dept', 
 			'app.view.main.MainModel' ],
 	xtype : 'app-main',
 	controller : 'main',
@@ -43,9 +44,9 @@ Ext.define('app.view.main.Main', {
 			                ]
 			            }
 			        })
-				
 			},"->","今日：2012-02-32     星期一 ","-", "访问总数：888888"],
 			//xtype:"mainNewsInfo"
+			//xtype:"mainDept"
 			layout : "column",
 			xtype:"panel",
 			items : [ {
