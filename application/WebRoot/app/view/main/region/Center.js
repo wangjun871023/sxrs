@@ -1,7 +1,15 @@
 Ext.define("app.view.main.region.Center", {
 	extend : "Ext.panel.Panel",
 	alias : "widget.maincenter",
-	requires : [ 'app.view.main.news.News'],
+	requires : [ 
+	             
+	             'app.view.main.news.News',
+	             'app.view.main.info.HotAttention',
+	             'app.view.main.info.InfoInteract',
+	             'app.view.main.info.WebMaintain',
+	             'app.view.main.info.DeptInfo',
+	             'app.view.main.info.TheoryStudy'
+	             ],
 	items : [ {
 		xtype : "mainNews",
 		title : "图片新闻",
@@ -12,21 +20,22 @@ Ext.define("app.view.main.region.Center", {
 		height : 300,
 		items : [ {
 			title : '热点关注',
-			html : '热点关注'
+			xtype:"mainHotAttention"
 		}, {
 			title : '理论学习',
-			html : '理论学习'
+			xtype:"mainTheoryStudy"
 		}, {
 			title : '信息交流',
-			html : '信息交流'
+			xtype:"mainInfoInteract"
 		}, {
 			title : '网站维护',
-			html : '网站维护'
+			xtype:"mainWebMaintain"
 		} ]
 
 	}, {
 		xtype : "grid",
 		title : "公司各部门信息",
+		xtype:"mainDeptInfo",
 		height : 300
 	} ]
 });

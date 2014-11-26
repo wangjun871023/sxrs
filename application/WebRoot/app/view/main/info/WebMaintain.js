@@ -1,29 +1,29 @@
 /**
- * 网站的底部
+ * 热点关注
  */
-Ext.define("app.view.main.notify.Notify", {
+Ext.define("app.view.main.info.WebMaintain", {
 	extend : "Ext.grid.Panel",
-	alias : "widget.mainNotify",
+	alias : "widget.mainWebMaintain",
 	store : Ext.create('Ext.data.Store', {
 		fields : [ 'title', 'date' ],
 		data : {
 			'items' : [ {
-				"title" : "title1 2010-1-2",
+				"title" : "WebMaintain 2010-1-2",
 				"date":"2010-1-2"
 			},  {
-				"title" : "title1 2010-1-2",
+				"title" : "WebMaintain 2010-1-2",
 				"date":"2010-1-2"
 			}, {
-				"title" : "title1 2010-1-2",
+				"title" : "WebMaintain 2010-1-2",
 				"date":"2010-1-2"
 			}, {
-				"title" : "title1 2010-1-2",
+				"title" : "WebMaintain 2010-1-2",
 				"date":"2010-1-2"
 			},{
-				"title" : "title1 2010-1-2",
+				"title" : "WebMaintain 2010-1-2",
 				"date":"2010-1-2"
 			}, {
-				"title" : "title1 2010-1-2",
+				"title" : "WebMaintain 2010-1-2",
 				"date":"2010-1-2"
 			} ]
 		},
@@ -39,19 +39,13 @@ Ext.define("app.view.main.notify.Notify", {
 	hideHeaders:true,
 	scroll : false,
 	columns : [ {
-		//text : "标题",
 		sortable : false,
-		width:310,
+		//width:310,
+		flex:1,
 		hideable : false,
 		dataIndex : 'title'
 	}],
 	bbar:['->',{
-		text:"<<"
-	},{
-		text:"<"
-	},{
-		text:">"
-	},{
-		text:">>"
+		text:"更多"
 	}]
 });
