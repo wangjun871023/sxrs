@@ -5,6 +5,7 @@ Ext.define('app.view.main.Main', {
 			'app.view.main.region.Bottom',
 			'app.view.main.region.MainView', 
 			'app.view.main.newsInfo.NewsInfo', 
+			'app.view.main.newsInfo.NewsInfoMore', 
 			'app.view.main.dept.Dept', 
 			'app.view.main.MainModel' ],
 	xtype : 'app-main',
@@ -50,6 +51,7 @@ Ext.define('app.view.main.Main', {
 			    		 this.up("app-main").down("mainView").setHidden(false);
 			    		 this.up("app-main").down("mainNewsInfo").setHidden(true);
 		    			 this.up("app-main").down("mainDept").setHidden(true);
+		    			 this.up("app-main").down("mainNewsInfoMore").setHidden(true);
 		             }  
 			     }
 			}
@@ -59,6 +61,9 @@ Ext.define('app.view.main.Main', {
 				hidden:true
 			},{
 				xtype:"mainDept",
+				hidden:true
+			},{
+				xtype:"mainNewsInfoMore",
 				hidden:true
 			},{
 				xtype:"mainView"

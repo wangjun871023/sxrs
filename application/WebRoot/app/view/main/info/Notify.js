@@ -46,6 +46,12 @@ Ext.define("app.view.main.info.Notify", {
 		dataIndex : 'title'
 	}],
 	bbar:['->',{
-		text:"更多"
+		text:"更多",
+		handler:function(){
+			this.up("app-main").down("mainView").setHidden(true);
+			this.up("app-main").down("mainNewsInfo").setHidden(true);
+			this.up("app-main").down("mainDept").setHidden(true);
+			this.up("app-main").down("mainNewsInfoMore").setHidden(false);
+		}
 	}]
 });
