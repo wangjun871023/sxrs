@@ -19,7 +19,7 @@ Ext.define('app.view.main.dept.Dept', {
 			defaults:{
 				xtype:"button",
 				width:100,
-				bodyPadding : 2,
+				bodyPadding : 5,
 				margin:"0 0 0 5"
 			},
 			layout : {
@@ -57,6 +57,7 @@ Ext.define('app.view.main.dept.Dept', {
 			},{
 				columnWidth : 0.3,
 				xtype : "panel",
+				margin:"0 0 0 1",
 				title : "联系方式",
 				height : 240
 			}]
