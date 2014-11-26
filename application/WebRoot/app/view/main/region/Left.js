@@ -2,6 +2,9 @@ Ext.define("app.view.main.region.Left", {
 	extend : "Ext.panel.Panel",
 	alias : "widget.mainleft",
 	layout:"vbox",
+	requires : [ 
+	 			'app.view.main.login.Login'
+	],
 	items : [ {
 		xtype : "mainlogin",
 		bodyPadding : 5,
@@ -24,7 +27,15 @@ Ext.define("app.view.main.region.Left", {
 			columns : 2,
 		},
 		items : [ {
-			text : "办公室"
+			text : "办公室",
+			handler:function(){
+				var obj = this.up("mainView");
+				obj.setHidden(true);
+				
+				obj = this.up("app-main").down("mainDept");
+				obj.setHidden(false);
+				
+			}
 		}, {
 			text : "工会工作部"
 		}, {
