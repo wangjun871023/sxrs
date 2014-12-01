@@ -6,6 +6,7 @@ Ext.define('app.view.main.Main', {
 			'app.view.main.region.MainView', 
 			'app.view.main.newsInfo.NewsInfo', 
 			'app.view.main.newsInfo.NewsInfoMore', 
+			'app.view.main.admin.Admin', 
 			'app.view.main.dept.Dept', 
 			'app.view.main.MainModel' ],
 	xtype : 'app-main',
@@ -49,9 +50,9 @@ Ext.define('app.view.main.Main', {
 			     listeners:{
 			    	 selectionchange: function(bar,node) {
 			    		 this.up("app-main").down("mainView").setHidden(false);
-			    		 this.up("app-main").down("mainNewsInfo").setHidden(true);
-		    			 this.up("app-main").down("mainDept").setHidden(true);
-		    			 this.up("app-main").down("mainNewsInfoMore").setHidden(true);
+			    		 this.up("app-main").down("mainNewsInfo").setHidden(false);
+		    			 this.up("app-main").down("mainDept").setHidden(false);
+		    			 this.up("app-main").down("mainNewsInfoMore").setHidden(false);
 		             }  
 			     }
 			}
@@ -66,11 +67,15 @@ Ext.define('app.view.main.Main', {
 				xtype:"mainNewsInfoMore",
 				hidden:true
 			},{
-				xtype:"mainView"
+				xtype:"mainView",
+				hidden:true
+			},{
+				xtype:"mainAdmin",
+				hidden:false
 			}]
 		}, {
 			xtype : 'mainbottom',
-			height : 30
+			height : 50
 		} ]
 	}, {
 		xtype : "panel",
