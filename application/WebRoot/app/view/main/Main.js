@@ -26,7 +26,7 @@ Ext.define('app.view.main.Main', {
 		width : 1024,
 		items : [ {
 			xtype : 'maintop',
-			height : 120
+			height : 155
 		}, {
 			bodyPadding : 1,
 			xtpe:"panel",

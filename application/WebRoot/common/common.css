@@ -1,6 +1,52 @@
 .logSystem{
-	background-image: url(../resources/icon/png-0220.png);
+	background-image: url(../resources/icon/brick.png);
 }
 
+.sdms{
+	background-image: url(../resources/icon/application_side_list.png);
+}
 
+.accoutSys{
+	background-image: url(../resources/icon/folder_star.png);
+}
+
+.accoutBack{
+	background-image: url(../resources/icon/report.png);
+}
+
+.hostWeb{
+	background-image: url(../resources/icon/world.png);
+}
+
+.webIndex{
+	background-image: url(../resources/icon/world_link.png);
+}
+
+.softDown{
+	background-image: url(../resources/icon/lorry_link.png);
+}
+
+.examOnline{
+	background-image: url(../resources/icon/comment_edit.png);
+}
+
+.evaluateOnline{
+	background-image: url(../resources/icon/overlays.png);
+}
+
+.complaintSys{
+	background-image: url(../resources/icon/lightning.png);
+}
+
+.regimeSearch{
+	background-image: url(../resources/icon/information.png);
+}
+
+.knowLib{
+	background-image: url(../resources/icon/computer.png);
+}
+
+.dinerLib{
+	background-image: url(../resources/icon/cake.png);
+}
 
