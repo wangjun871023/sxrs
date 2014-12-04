@@ -8,7 +8,7 @@ Ext.define('app.view.common.ButtonTransparent', {
 		this.listeners = {
 			// 鼠标移开，背景设置透明
 			mouseout : function(btn) {
-				this.setTransparent(document.getElementById(btn.id));
+				this.setTransparent(document.getElementById(this.id));
 			},
 			// 鼠标移过，背景取消透明
 			mouseover : function() {
@@ -22,7 +22,6 @@ Ext.define('app.view.common.ButtonTransparent', {
 				this.setTransparent(document.getElementById(this.id));
 			}
 		};
-
 		this.callParent(arguments); // 调用你模块的initComponent函数
 	},
 	setTransparent : function(b) {

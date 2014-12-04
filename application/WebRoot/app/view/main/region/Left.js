@@ -9,11 +9,13 @@ Ext.define("app.view.main.region.Left", {
 		xtype : "mainlogin",
 		bodyPadding : 5,
 		height : 240,
-		title : "登录山西人寿门户网站"
+		title : "登录山西人寿门户网站",
+        iconCls:"loginWeb"
 	}, {
 		xtype : "panel",
 		title : "公司部门",
 		margin:"5 0 0 0",
+        iconCls:"compDept",
 		flex:1,
 		bodyPadding : 10,
 		defaults:{

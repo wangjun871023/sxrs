@@ -7,17 +7,20 @@ Ext.define("app.view.main.region.Right", {
 	alias : "widget.mainright",
 	items : [ {
 		xtype : "mainNotify",
-		title : "通知/发文",
-		height : 240
+		title : "通知发文",
+		height : 240,
+        iconCls:"notifyPaper"
 	}, {
 		margin:"5 0 0 0",
 		xtype : "mainTodayUpdate",
 		title : "每日更新",
+        iconCls:"dayNews",
 		height : 300
 	},{
 		xtype : "panel",
 		title : "当前关注",
 		bodyPadding : 2,
+        iconCls:"nowAttention",
 		layout : {
 			type : "table",
 			columns : 2

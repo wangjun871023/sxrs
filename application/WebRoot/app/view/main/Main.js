@@ -50,15 +50,16 @@ Ext.define('app.view.main.Main', {
 			     listeners:{
 			    	 selectionchange: function(bar,node) {
 			    		 this.up("app-main").down("mainView").setHidden(false);
-			    		 this.up("app-main").down("mainNewsInfo").setHidden(false);
-		    			 this.up("app-main").down("mainDept").setHidden(false);
-		    			 this.up("app-main").down("mainNewsInfoMore").setHidden(false);
+			    		 this.up("app-main").down("mainNewsInfo").setHidden(true);
+		    			 this.up("app-main").down("mainDept").setHidden(true);
+		    			 this.up("app-main").down("mainNewsInfoMore").setHidden(true);
+		    			 this.up("app-main").down("mainAdmin").setHidden(true);
 		             }  
 			     }
 			}
 			,"->","今日：2012-02-32     星期一 ","-", "访问总数：888888"],
 			items:[{
-				xtype:"mainNewsInfo",
+				xtype:"mainView",
 				hidden:true
 			},{
 				xtype:"mainDept",
@@ -67,7 +68,7 @@ Ext.define('app.view.main.Main', {
 				xtype:"mainNewsInfoMore",
 				hidden:true
 			},{
-				xtype:"mainView",
+				xtype:"mainNewsInfo",
 				hidden:true
 			},{
 				xtype:"mainAdmin",

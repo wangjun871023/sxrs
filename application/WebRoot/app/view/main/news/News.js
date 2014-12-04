@@ -5,11 +5,9 @@ Ext.define("app.view.main.news.News", {
 	extend : "Ext.panel.Panel",
 	alias : "widget.mainNews",
 	requires : [ 'app.view.common.ButtonTransparent' ],
-//	id : "mainNews",
 	bodyStyle : {
 		"background-image" : "url(app/view/main/news/images/1.jpg)",
-		"background-repeat" : "no-repeat",
-		"background-size" : "100% 100%"
+		"background-repeat" : "no-repeat"
 	},
 	layout : "border",
 	items : [ {
@@ -22,6 +20,8 @@ Ext.define("app.view.main.news.News", {
 		items : [ {
 			xtype : "buttontransparent",
 			action : "left",
+            frame:false,
+            scale:"large",
 			text : "<<"
 		}, {
 			xtype : "container",
@@ -29,17 +29,21 @@ Ext.define("app.view.main.news.News", {
 		}, {
 			xtype : "buttontransparent",
 			action : "right",
+            frame:false,
+            scale:"large",
 			text : ">>"
 		} ]
 	}, {
 		xtype : "container",
+        frame:false,
 		region : "south",
 		height : 30,
-		style : "background:rgba(98,98,98,0.6);z-index: 10;padding:5px;",
+	    style: "background:rgba(98,98,98,0.6); padding:5px;",
 		layout : "hbox",
 		items : [ {
 			xtype : "buttontransparent",
 			action:"content",
+            frame:false,
 			flex : 1,
 			text : "testtesttesttesttesttesttesttest",
 			handler:function(){
@@ -54,18 +58,22 @@ Ext.define("app.view.main.news.News", {
 			},
 			items : [ {
 				xtype : "buttontransparent",
+                frame:false,
 				action : "nums",
 				text : "1"
 			}, {
 				xtype : "buttontransparent",
+                frame:false,
 				action : "nums",
 				text : "2"
 			}, {
 				xtype : "buttontransparent",
+                frame:false,
 				action : "nums",
 				text : "3"
 			}, {
 				xtype : "buttontransparent",
+                frame:false,
 				action : "nums",
 				text : "4"
 			} ]
@@ -238,5 +246,4 @@ Ext.define("app.view.main.news.News", {
 		var runner = this.up("mainNews").runner;
 		var task = this.up("mainNews").task;
 	}
-
 });
