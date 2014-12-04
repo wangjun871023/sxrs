@@ -1,5 +1,5 @@
 /**
- * 热点关注
+ * 各部门信息
  */
 Ext.define("app.view.main.info.DeptInfo", {
 	extend : "Ext.grid.Panel",

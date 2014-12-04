@@ -2,7 +2,8 @@ Ext.define("app.view.main.region.Right", {
 	extend : "Ext.panel.Panel",
 	requires : [ 
 	             'app.view.main.info.Notify',
-	             'app.view.main.info.TodayUpdate'
+	             'app.view.main.info.TodayUpdate',
+	             'app.view.main.nowAttention.NowAttention'
 	             ],
 	alias : "widget.mainright",
 	items : [ {
@@ -17,29 +18,6 @@ Ext.define("app.view.main.region.Right", {
         iconCls:"dayNews",
 		height : 300
 	},{
-		xtype : "panel",
-		title : "当前关注",
-		bodyPadding : 2,
-        iconCls:"nowAttention",
-		layout : {
-			type : "table",
-			columns : 2
-		},
-		defaults:{
-			xtype:"image",
-			bodyPadding : 2,
-			margin:"0 0 0 5",
-			width:140,
-			height : 80
-		},
-		items : [ {
-			src : "resources/attentions/1.jpg",
-		}, {
-			src : "resources/attentions/2.bmp",
-		}, {
-			src : "resources/attentions/3.jpg",
-		}, {
-			src : "resources/attentions/4.jpg",
-		}]
+		xtype : "nowAttention"
 	} ]
 });

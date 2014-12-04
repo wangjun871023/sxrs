@@ -4,6 +4,9 @@
 Ext.define("app.view.main.info.Notify", {
 	extend : "Ext.grid.Panel",
 	alias : "widget.mainNotify",
+	requires : [ 
+	 			'app.view.common.ButtonTransparent'
+	],
 	store : Ext.create('Ext.data.Store', {
 		fields : [ 'title', 'date' ],
 		data : {
@@ -45,7 +48,32 @@ Ext.define("app.view.main.info.Notify", {
 		hideable : false,
 		dataIndex : 'title'
 	}],
+	tools: [ {
+        xtype: 'textfield',
+        itemId: 'keyWords',
+        hidden:true,
+        handler: function(){
+            // 实现刷新的逻辑
+        }
+    },{
+        type: 'search',
+        handler: function(event, target, owner, tool){
+            // 实现查询的逻辑
+        	var obj = owner.child('#keyWords');
+        	if(obj.isHidden()){
+        		obj.show();
+        	}else{
+        		obj.hide();
+        	}
+        }
+    }],
 	bbar:['->',{
+		xtype:"buttontransparent",
+		text:"刷新",
+		handler:function(){
+		}
+	},'-',{
+		xtype:"buttontransparent",
 		text:"更多",
 		handler:function(){
 			this.up("app-main").down("mainView").setHidden(true);

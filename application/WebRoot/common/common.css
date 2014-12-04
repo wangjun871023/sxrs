@@ -95,5 +95,15 @@
 	background-image: url(../resources/icon/link_go.png);
 }
 
+.view {
+	background-color: #fff;
+	text-shadow: #fff 0 1px 0;
+	position: relative;
+	display: block;
+	height: auto;
+}
 
+.viewHover{
+	background-color: #eee;
+}
 

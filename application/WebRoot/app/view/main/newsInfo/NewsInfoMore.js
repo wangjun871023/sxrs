@@ -1,6 +1,10 @@
 Ext.define('app.view.main.newsInfo.NewsInfoMore', {
 	extend : "Ext.grid.Panel",
 	alias : "widget.mainNewsInfoMore",
+	requires: [
+	           'Ext.ux.ProgressBarPager'
+	],
+	title:"详细",
 	store : Ext.create('Ext.data.Store', {
 		fields : [ 'title', 'date' ],
 		data : {
@@ -42,8 +46,11 @@ Ext.define('app.view.main.newsInfo.NewsInfoMore', {
 		hideable : false,
 		dataIndex : 'title'
 	}],
-	bbar: Ext.create('Ext.PagingToolbar', {
-          store: this.store,
-          displayInfo: true
-    })
+	bbar: {
+	      xtype: 'pagingtoolbar',
+	      pageSize: 10,
+	      store: this.store,
+	      displayInfo: true,
+	      plugins: Ext.create("Ext.ux.ProgressBarPager")
+	}
 });

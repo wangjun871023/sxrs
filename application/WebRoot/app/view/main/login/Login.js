@@ -1,6 +1,8 @@
 Ext.define("app.view.main.login.Login", {
 	extend : "Ext.form.Panel",
 	alias : "widget.mainlogin",
+	animCollapse : true,
+	collapsible:true,
 	bodyPadding : 10,
 	defaults: {
         xtype: 'textfield',

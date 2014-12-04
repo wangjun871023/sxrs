@@ -35,12 +35,11 @@ Ext.define("app.view.main.region.Center", {
 			xtype:"mainWebMaintain",
             iconCls:"webMaintain"
 		} ]
-
 	}, {
 		xtype : "grid",
 		title : "公司各部门信息",
         iconCls:"compDeptInfo",
 		xtype:"mainDeptInfo",
-		height : 300
+		minHeight : 300
 	} ]
 });

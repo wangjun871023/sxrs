@@ -2,6 +2,7 @@ Ext.define('app.view.common.ButtonTransparent', {
 	extend : 'Ext.button.Button', // 继续于Ext.button.Button
 	alias : 'widget.buttontransparent', // 此类的xtype类型为buttontransparent
 	runner:null,
+	frame:false,
 	// 类初始化时执行
 	initComponent : function() {
 		// 设置事件监听
