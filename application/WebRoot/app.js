@@ -3,3 +3,4 @@ Ext.application({
     extend: 'app.Application',
     autoCreateViewport: 'app.view.main.Main'
 });
+ 
