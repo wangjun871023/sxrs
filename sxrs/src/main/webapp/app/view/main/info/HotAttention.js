@@ -46,6 +46,18 @@ Ext.define("app.view.main.info.HotAttention", {
 		dataIndex : 'title'
 	}],
 	bbar:['->',{
-		text:"更多"
+		xtype:"buttontransparent",
+		text:"刷新",
+		handler:function(){
+		}
+	},'-',{
+		xtype:"buttontransparent",
+		text:"更多",
+		handler:function(){
+			this.up("app-main").down("mainView").setHidden(true);
+			this.up("app-main").down("mainNewsInfo").setHidden(true);
+			this.up("app-main").down("mainDept").setHidden(true);
+			this.up("app-main").down("mainNewsInfoMore").setHidden(false);
+		}
 	}]
 });

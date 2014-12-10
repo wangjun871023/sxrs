@@ -11,8 +11,8 @@ Ext.define("app.view.main.info.Notify", {
 		fields : [ 'title', 'date' ],
 		data : {
 			'items' : [ {
-				"title" : "title1 2010-1-2",
-				"date":"2010-1-2"
+				"title" : "<a href='#' title='abcd'>ttitle1 2010-1title1 2010-1title1 2010-1title1 2010-1itle1 2010-1-2</a>",
+				"date":"2010-01-02"
 			},  {
 				"title" : "title1 2010-1-2",
 				"date":"2010-1-2"
@@ -23,6 +23,9 @@ Ext.define("app.view.main.info.Notify", {
 				"title" : "title1 2010-1-2",
 				"date":"2010-1-2"
 			},{
+				"title" : "title1 2010-1-2",
+				"date":"2010-1-2"
+			}, {
 				"title" : "title1 2010-1-2",
 				"date":"2010-1-2"
 			}, {
@@ -43,11 +46,13 @@ Ext.define("app.view.main.info.Notify", {
 	scroll : false,
 	columns : [ {
 		sortable : false,
-		//width:310,
 		flex:1,
 		hideable : false,
 		dataIndex : 'title'
-	}],
+    },{
+        dataIndex:"date",
+		width:90
+    }],
 	tools: [ {
         xtype: 'textfield',
         itemId: 'keyWords',

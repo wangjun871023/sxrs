@@ -45,7 +45,19 @@ Ext.define("app.view.main.info.InfoInteract", {
 		hideable : false,
 		dataIndex : 'title'
 	}],
-	bbar:['->',{
-		text:"更多"
+    bbar:['->',{
+		xtype:"buttontransparent",
+		text:"刷新",
+		handler:function(){
+		}
+	},'-',{
+		xtype:"buttontransparent",
+		text:"更多",
+		handler:function(){
+			this.up("app-main").down("mainView").setHidden(true);
+			this.up("app-main").down("mainNewsInfo").setHidden(true);
+			this.up("app-main").down("mainDept").setHidden(true);
+			this.up("app-main").down("mainNewsInfoMore").setHidden(false);
+		}
 	}]
 });

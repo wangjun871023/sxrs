@@ -25,7 +25,16 @@ Ext.define("app.view.main.info.WebMaintain", {
 			}, {
 				"title" : "WebMaintain 2010-1-2",
 				"date":"2010-1-2"
-			} ]
+			} , {
+				"title" : "WebMaintain 2010-1-2",
+				"date":"2010-1-2"
+			}, {
+				"title" : "WebMaintain 2010-1-2",
+				"date":"2010-1-2"
+			}, {
+				"title" : "WebMaintain 2010-1-2",
+				"date":"2010-1-2"
+			}]
 		},
 		proxy : {
 			type : 'memory',
@@ -46,6 +55,18 @@ Ext.define("app.view.main.info.WebMaintain", {
 		dataIndex : 'title'
 	}],
 	bbar:['->',{
-		text:"更多"
+		xtype:"buttontransparent",
+		text:"刷新",
+		handler:function(){
+		}
+	},'-',{
+		xtype:"buttontransparent",
+		text:"更多",
+		handler:function(){
+			this.up("app-main").down("mainView").setHidden(true);
+			this.up("app-main").down("mainNewsInfo").setHidden(true);
+			this.up("app-main").down("mainDept").setHidden(true);
+			this.up("app-main").down("mainNewsInfoMore").setHidden(false);
+		}
 	}]
 });
