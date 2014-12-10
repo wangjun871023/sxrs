@@ -1,11 +1,9 @@
 /**
- * This class is the view model for the Main view of the application.
+ * Main系统ViewModel
  */
 Ext.define('app.view.main.MainModel', {
 	extend : 'Ext.app.ViewModel',
-
-	alias : 'viewmodel.main',
-
+	alias : 'viewmodel.mainViewModel',
 	data : {
 		name : 'app',
 		// 系统信息

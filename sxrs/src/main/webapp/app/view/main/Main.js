@@ -1,84 +1,37 @@
+/**
+ *  主应用Main
+ */
 Ext.define('app.view.main.Main', {
 	extend : 'Ext.container.Container',
-	requires : [ 'app.view.main.MainController',
-	             'app.view.main.region.Top',
-			'app.view.main.region.Bottom',
-			'app.view.main.region.MainView', 
-			'app.view.main.newsInfo.NewsInfo', 
-			'app.view.main.newsInfo.NewsInfoMore', 
-			'app.view.main.admin.Admin', 
-			'app.view.main.dept.Dept', 
-			'app.view.main.MainModel' ],
+	requires : [ 
+            'app.view.main.MainController',
+            'app.view.main.MainModel',
+            //主界面
+            'app.view.main.region.MainCenter'
+    ],
 	xtype : 'app-main',
-	controller : 'main',
-	overflowY : "scroll",
+    //控制器
+	controller : 'mainController',
+    //ViewModel
 	viewModel : {
-		type : 'main'
+		type : 'mainViewModel'
 	},
+    //Y滚动
+	overflowY : "scroll",
+    //布局
 	layout : {
 		type : 'hbox'
 	},
 	items : [ {
+        //左边
 		xtype : "panel",
 		flex : 1
 	}, {
-		xtype : "panel",
-		width : 1024,
-		items : [ {
-			xtype : 'maintop',
-			height : 155
-		}, {
-			bodyPadding : 1,
-			xtpe:"panel",
-			tbar:[{
-				 xtype: 'breadcrumb',
-				 showIcons: true,
-				 store:new Ext.data.TreeStore({
-			            root: {
-			            	text:"首页",
-			                expanded: true,
-			                children: [
-			                    {
-			                        text: '一级菜单',
-			                        children: [
-			                            { leaf:true, text: '二级菜单' }
-			                        ]
-			                    }
-			                ]
-			            }
-			     }),
-			     listeners:{
-			    	 selectionchange: function(bar,node) {
-			    		 this.up("app-main").down("mainView").setHidden(false);
-			    		 this.up("app-main").down("mainNewsInfo").setHidden(true);
-		    			 this.up("app-main").down("mainDept").setHidden(true);
-		    			 this.up("app-main").down("mainNewsInfoMore").setHidden(true);
-		    			 this.up("app-main").down("mainAdmin").setHidden(true);
-		             }  
-			     }
-			}
-			,"->","今日：2012-02-32     星期一 ","-", "访问总数：888888"],
-			items:[{
-				xtype:"mainView",
-				hidden:true
-			},{
-				xtype:"mainDept",
-				hidden:true
-			},{
-				xtype:"mainNewsInfoMore",
-				hidden:true
-			},{
-				xtype:"mainNewsInfo",
-				hidden:true
-			},{
-				xtype:"mainAdmin",
-				hidden:false
-			}]
-		}, {
-			xtype : 'mainbottom',
-			height : 50
-		} ]
+        //中间
+		xtype : "mainCenter",
+		width : 1024
 	}, {
+        //右边
 		xtype : "panel",
 		flex : 1
 	} ]

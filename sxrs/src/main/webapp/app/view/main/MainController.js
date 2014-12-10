@@ -7,17 +7,13 @@
  */
 Ext.define('app.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-
     requires: [
         'Ext.MessageBox'
     ],
-
-    alias: 'controller.main',
-
+    alias: 'controller.mainController',
     onClickButton: function () {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     },
-
     onConfirm: function (choice) {
         if (choice === 'yes') {
             //
