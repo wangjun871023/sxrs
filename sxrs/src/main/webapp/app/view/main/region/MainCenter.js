@@ -1,3 +1,6 @@
+/*
+ * 中间的MainCenter
+ * */
 Ext.define('app.view.main.region.MainCenter', {
 	extend : 'Ext.panel.Panel',
 	requires : [ 
@@ -5,12 +8,14 @@ Ext.define('app.view.main.region.MainCenter', {
             'app.view.main.MainModel',
                   
             'app.view.main.region.TopBar',
+
             'app.view.main.region.Top',
 			'app.view.main.region.Bottom',
+
 			'app.view.main.region.MainView', 
 			'app.view.main.newsInfo.NewsInfo', 
 			'app.view.main.newsInfo.NewsInfoMore', 
-			'app.view.main.admin.Admin', 
+			'app.view.main.admin.Admin',
 			'app.view.main.dept.Dept'
     ],
     //别名
@@ -47,7 +52,7 @@ Ext.define('app.view.main.region.MainCenter', {
             hidden:true
         },{
             xtype:"mainAdmin",
-            hidden:false
+            hidden:true
         }]
     }, {
         //下面的pic

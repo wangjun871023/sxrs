@@ -3,7 +3,7 @@ Ext.define("app.view.main.region.Left", {
 	alias : "widget.mainleft",
 	layout:"vbox",
 	requires : [ 
-	 			'app.view.main.login.Login'
+	 	'app.view.main.login.Login'
 	],
 	items : [ {
 		xtype : "mainlogin",
@@ -16,7 +16,6 @@ Ext.define("app.view.main.region.Left", {
 		title : "公司部门",
 		margin:"5 0 0 0",
         iconCls:"compDept",
-		flex:1,
 		bodyPadding : 10,
 		defaults:{
 			xtype:"button",
