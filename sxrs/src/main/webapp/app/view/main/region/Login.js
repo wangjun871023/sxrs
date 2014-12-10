@@ -1,4 +1,4 @@
-Ext.define("app.view.main.login.Login", {
+Ext.define("app.view.main.region.Login", {
 	extend : "Ext.form.Panel",
 	alias : "widget.mainlogin",
 	animCollapse : true,
