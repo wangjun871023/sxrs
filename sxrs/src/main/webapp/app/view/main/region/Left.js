@@ -15,6 +15,8 @@ Ext.define("app.view.main.region.Left", {
 	}, {
 		xtype : "deptPanel",
 		title : "公司部门",
+        width: "100%",
+        height:"100%",
 		margin:"5 0 0 0",
         iconCls:"compDept"
 	} ]

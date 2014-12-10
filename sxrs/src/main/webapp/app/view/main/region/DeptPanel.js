@@ -1,56 +1,32 @@
 Ext.define("app.view.main.region.DeptPanel", {
-	extend : "Ext.panel.Panel",
+	extend : "Ext.tree.Panel",
 	alias : "widget.deptPanel",
-    bodyPadding : 10,
-    defaults:{
-        xtype:"button",
-        width:100,
-        bodyPadding : 2,
-        margin:"0 0 0 5"
-    },
-    layout : {
-        type : "table",
-        columns : 2,
-    },
-    items : [ {
-        text : "办公室",
-        handler:function(){
-            var obj = this.up("mainView");
-            obj.setHidden(true);
-            obj = this.up("app-main").down("mainDept");
-            obj.setHidden(false);
+    autoScroll:true,
+    store: Ext.create('Ext.data.TreeStore', {
+        root: {
+            text:"公司部门",
+            expanded: true,
+            children: [
+                { text: "办公室", leaf: true },
+                { text: "工会工作部", leaf: true },
+                { text: "监察部公室", leaf: true },
+                { text: "销售督察部", leaf: true },
+                { text: "内控合规部", leaf: true },
+                { text: "人力资源部", leaf: true },
+                { text: "教育培训部", leaf: true },
+                { text: "电销中心", leaf: true },
+                { text: "健康保险部", leaf: true },
+                { text: "团体业务部", leaf: true },
+                { text: "个险销售部", leaf: true },
+                { text: "县域保险部", leaf: true },
+                { text: "银行保险部", leaf: true },
+                { text: "客服管理", leaf: true },
+                { text: "业务管理", leaf: true },
+                { text: "财务管理", leaf: true },
+                { text: "信息技术部", leaf: true }
+            ]
         }
-	}, {
-        text : "工会工作部"
-    }, {
-        text : "监察部公室"
-    }, {
-        text : "销售督察部"
-    }, {
-        text : "内控合规部"
-    }, {
-        text : "人力资源部"
-    }, {
-        text : "教育培训部"
-    }, {
-        text : "电销中心"
-    }, {
-        text : "健康保险部"
-    }, {
-        text : "团体业务部"
-    }, {
-        text : "个险销售部"
-    }, {
-        text : "县域保险部"
-    }, {
-        text : "银行保险部"
-    }, {
-        text : "客服管理"
-    }, {
-        text : "业务管理"
-    }, {
-        text : "财务管理"
-    }, {
-        text : "信息技术部"
-    }]
+    }),
+    //rootVisible: false,
+    useArrows:true
 });
