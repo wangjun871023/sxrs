@@ -52,5 +52,5 @@ Ext.define("app.view.main.region.DeptPanel", {
         text : "财务管理"
     }, {
         text : "信息技术部"
-    } ]
+    }]
 });
