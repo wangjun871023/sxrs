@@ -36,18 +36,11 @@ Ext.define('app.view.main.region.TopBar',{
     },
 	"->",{
         xtype:"label",
-        action:"date",
         text:"今日：2012-02-32     星期一 ",
         listeners:{
             beforerender:function(label){
-                var updateClock = function () {
-                    label.setText(Ext.Date.format(new Date(), '今日：l, Y-m-d H:i:s'));
-                };
-                var runner = new Ext.util.TaskRunner(),
-                task = runner.start({
-                     run: updateClock,
-                     interval: 1000
-                });
+            	var txt = Ext.Date.format(new Date(), '今日：l, Y-m-d');
+                label.setText(txt);
             }
         }
     },
