@@ -28,9 +28,6 @@ Ext.define("app.view.main.info.Notify", {
 			}, {
 				"title" : "title1 2010-1-2",
 				"date":"2010-1-2"
-			}, {
-				"title" : "title1 2010-1-2",
-				"date":"2010-1-2"
 			} ]
 		},
 		proxy : {
