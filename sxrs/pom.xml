@@ -13,9 +13,9 @@
 
 	<dependencies>
 		<dependency>
-			<!-- baseSpringMVC -->
-			<groupId>baseSpringMVC</groupId>
-			<artifactId>baseSpringMVC</artifactId>
+			<!-- baseSpringMvcExtjs -->
+			<groupId>baseSpringMvcExtjs</groupId>
+			<artifactId>baseSpringMvcExtjs</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
