@@ -5,7 +5,8 @@ Ext.define("app.view.main.admin.Admin", {
 	height:550,
 	border:false,
 	requires : [
-        "app.view.main.admin.MenuItem"
+        "app.view.main.admin.MenuItem",
+        "app.view.main.admin.DeptPersonInfo"
     ],
 	items : [{
 		region:"west",
@@ -21,8 +22,8 @@ Ext.define("app.view.main.admin.Admin", {
 		region:"center",
 		xtype:"tabpanel",
 		items:[{
-			title:"Tab 1",
-			html:"<h2>Tab1</h2>"
+			title:"部门人员信息",
+            xtype:"deptPersonInfo"
 		},{
 			title:"Tab 2",
 			html:"<h2>Tab2</h2>"
