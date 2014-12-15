@@ -27,6 +27,14 @@ Ext.define("app.view.main.region.DeptPanel", {
             ]
         }
     }),
-    //rootVisible: false,
-    useArrows:true
+    useArrows:true,
+    listeners:{
+        itemclick:function(){
+             this.up("app-main").down("mainView").setHidden(true);
+             this.up("app-main").down("mainNewsInfo").setHidden(true);
+             this.up("app-main").down("mainDept").setHidden(false);
+             this.up("app-main").down("mainNewsInfoMore").setHidden(true);
+             this.up("app-main").down("mainAdmin").setHidden(true);
+        }
+    }
 });

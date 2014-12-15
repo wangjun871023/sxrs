@@ -1,6 +1,11 @@
 Ext.define('app.view.main.dept.Dept', {
 	extend : 'Ext.panel.Panel',
 	alias : "widget.mainDept",
+	requires : [
+        'app.view.main.dept.DeptNotify',
+        'app.view.main.dept.DeptContact',
+        'app.view.main.news.DeptNews'
+    ],
 	layout : "column",
 	bodyPadding : 1,
 	items : [ {
@@ -8,8 +13,8 @@ Ext.define('app.view.main.dept.Dept', {
 		columnWidth : 0.3,
 		bodyPadding : 1,
 		items:[ {
-			xtype : "panel",
-			title : "部门通知/发文",
+			xtype : "deptNotify",
+			title : "部门通知发文",
 			height : 240
 		},{
 			xtype : "panel",
@@ -51,12 +56,12 @@ Ext.define('app.view.main.dept.Dept', {
 			layout:"column",
 			items:[ {
 				columnWidth : 0.7,
-				xtype : "panel",
+				xtype : "deptNews",
 				title : "图片新闻",
 				height : 240
 			},{
 				columnWidth : 0.3,
-				xtype : "panel",
+				xtype : "deptContact",
 				margin:"0 0 0 1",
 				title : "联系方式",
 				height : 240
