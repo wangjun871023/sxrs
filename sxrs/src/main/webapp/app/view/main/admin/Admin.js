@@ -6,6 +6,7 @@ Ext.define("app.view.main.admin.Admin", {
 	border:false,
 	requires : [
         "app.view.main.admin.MenuItem",
+        "app.view.main.admin.PersonalInfo",
         "app.view.main.admin.DeptPersonInfo"
     ],
 	items : [{
@@ -25,8 +26,8 @@ Ext.define("app.view.main.admin.Admin", {
 			title:"部门人员信息",
             xtype:"deptPersonInfo"
 		},{
-			title:"Tab 2",
-			html:"<h2>Tab2</h2>"
+			title:"个人信息",
+            xtype:"personalInfo"
 		}]
 	}]
 });
