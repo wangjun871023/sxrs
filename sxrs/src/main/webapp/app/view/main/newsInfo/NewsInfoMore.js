@@ -39,6 +39,27 @@ Ext.define('app.view.main.newsInfo.NewsInfoMore', {
 	enableColumnResize:false,
 	hideHeaders:true,
 	scroll : false,
+	tools: [ {
+        xtype: 'textfield',
+        itemId: 'keyWords',
+        hidden:true,
+        listeners:{
+            blur:function(){
+                this.hide();
+            }
+        }
+    },{
+        type: 'search',
+        handler: function(event, target, owner, tool){
+            // 实现查询的逻辑
+        	var obj = owner.child('#keyWords');
+        	if(obj.isHidden()){
+        		obj.show();
+        	}else{
+        		obj.hide();
+        	}
+        }
+    }],
 	columns : [ {
 		sortable : false,
 		//width:310,

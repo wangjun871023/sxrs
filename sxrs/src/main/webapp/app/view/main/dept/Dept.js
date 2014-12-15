@@ -3,7 +3,9 @@ Ext.define('app.view.main.dept.Dept', {
 	alias : "widget.mainDept",
 	requires : [
         'app.view.main.dept.DeptNotify',
+        'app.view.main.dept.DeptInfoType',
         'app.view.main.dept.DeptContact',
+        'app.view.main.dept.DeptInfoDynamic',
         'app.view.main.news.DeptNews'
     ],
 	layout : "column",
@@ -17,35 +19,9 @@ Ext.define('app.view.main.dept.Dept', {
 			title : "部门通知发文",
 			height : 240
 		},{
-			xtype : "panel",
-			title : "信息类别",
-			margin:"5 0 0 0",
-			bodyPadding : 10,
-			defaults:{
-				xtype:"button",
-				width:100,
-				bodyPadding : 5,
-				margin:"0 0 0 5"
-			},
-			layout : {
-				type : "table",
-				columns : 2,
-			},
-			items : [ {
-				text : "信息类别1"
-			}, {
-				text : "信息类别2"
-			}, {
-				text : "信息类别3"
-			}, {
-				text : "信息类别4"
-			}, {
-				text : "信息类别5"
-			}, {
-				text : "信息类别6"
-			}, {
-				text : "信息类别7"
-			} ]
+			xtype : "deptInfoType",
+            margin: "1 0 0 0",
+			title : "信息类别"
 		}]
 	},{
 		xtype:"panel",
@@ -67,10 +43,10 @@ Ext.define('app.view.main.dept.Dept', {
 				height : 240
 			}]
 		},{
-			xtype : "grid",
-			margin:"5 0 0 0",
+			xtype : "deptInfoDynamic",
+			margin: "1 0 0 0",
 			title : "部门动态",
-			height : 300
+			height : 500
 		}]
 	}]
 });

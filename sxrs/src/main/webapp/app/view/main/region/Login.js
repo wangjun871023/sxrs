@@ -32,7 +32,14 @@ Ext.define("app.view.main.region.Login", {
 		name : 'password'
 	}],
 	buttons : [ {
-		text : '登录'
+		text : '登录',
+        handler:function(){
+            this.up("app-main").down("mainView").setHidden(true);
+			this.up("app-main").down("mainNewsInfo").setHidden(true);
+			this.up("app-main").down("mainDept").setHidden(true);
+			this.up("app-main").down("mainNewsInfoMore").setHidden(true); 
+			this.up("app-main").down("mainAdmin").setHidden(false); 
+        }
 	}, {
 		text : '重置'
 	} ]

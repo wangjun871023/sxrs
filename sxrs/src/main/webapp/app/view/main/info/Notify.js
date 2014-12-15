@@ -50,25 +50,6 @@ Ext.define("app.view.main.info.Notify", {
         dataIndex:"date",
 		width:90
     }],
-	tools: [ {
-        xtype: 'textfield',
-        itemId: 'keyWords',
-        hidden:true,
-        handler: function(){
-            // 实现刷新的逻辑
-        }
-    },{
-        type: 'search',
-        handler: function(event, target, owner, tool){
-            // 实现查询的逻辑
-        	var obj = owner.child('#keyWords');
-        	if(obj.isHidden()){
-        		obj.show();
-        	}else{
-        		obj.hide();
-        	}
-        }
-    }],
 	bbar:['->',{
 		xtype:"buttontransparent",
 		text:"刷新",

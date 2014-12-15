@@ -4,11 +4,14 @@ Ext.define("app.view.main.admin.Admin", {
 	layout:"border",
 	height:550,
 	border:false,
+	requires : [
+        "app.view.main.admin.MenuItem"
+    ],
 	items : [{
 		region:"west",
-		xtype:"panel",
+		xtype:"menuItem",
 		border:false,
-		title:"项目导航",
+		title:"功能菜单",
 		split:true,
 		collapsible:true,
 		width:250
