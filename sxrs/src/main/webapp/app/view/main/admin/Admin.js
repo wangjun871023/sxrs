@@ -7,7 +7,9 @@ Ext.define("app.view.main.admin.Admin", {
 	requires : [
         "app.view.main.admin.MenuItem",
         "app.view.main.admin.PersonalInfo",
-        "app.view.main.admin.DeptPersonInfo"
+        "app.view.main.admin.DeptPersonInfo",
+        "app.view.main.admin.InfoManager",
+        "app.view.main.admin.NowAttentionInfo"
     ],
 	items : [{
 		region:"west",
@@ -28,6 +30,12 @@ Ext.define("app.view.main.admin.Admin", {
 		},{
 			title:"个人信息",
             xtype:"personalInfo"
+		},{
+			title:"信息维护",
+            xtype:"infoManager"
+		},{
+			title:"当前关注",
+            xtype:"nowAttentionInfo"
 		}]
 	}]
 });

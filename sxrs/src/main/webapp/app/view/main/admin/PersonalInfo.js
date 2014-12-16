@@ -23,6 +23,9 @@ Ext.define("app.view.main.admin.PersonalInfo", {
         }, {
             fieldLabel: '工号',
             name: 'field2'
+        }, {
+            fieldLabel: '所属部门',
+            name: 'field2'
         }]      
     },{
         xtype:'fieldset',
