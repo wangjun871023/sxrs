@@ -11,7 +11,6 @@ public class UserService implements IUserService {
     @Autowired  
     private IUserDao userDao;  
 
-
 	@Override
 	public boolean saveUserEntity(UserEntity userEntity) {
 		userDao.saveUserEntity(userEntity);  

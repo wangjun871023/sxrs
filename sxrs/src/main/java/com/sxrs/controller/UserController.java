@@ -14,10 +14,11 @@ import com.sxrs.service.IUserService;
 @RequestMapping(value="/user")  
 public class UserController {  
 	protected Log logger=LogFactory.getLog(getClass()); 
+	
     @Autowired  
     private IUserService userService;  
       
-    @RequestMapping(value="/login", method=RequestMethod.GET)  
+    @RequestMapping(value="/registe", method=RequestMethod.GET)  
     public String registe() {  
     	UserEntity userEntity = new UserEntity();
     	userEntity.setUserName("wj");
