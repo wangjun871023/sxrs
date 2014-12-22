@@ -47,7 +47,7 @@ public class UserEntity implements java.io.Serializable {
 	}
 
 	// Property accessors
-	@GenericGenerator(name = "generator", strategy = "uuid.string")
+	@GenericGenerator(name = "generator", strategy = "uuid2")
 	@Id
 	@GeneratedValue(generator = "generator")
 	@Column(name = "id", unique = true, nullable = false)
