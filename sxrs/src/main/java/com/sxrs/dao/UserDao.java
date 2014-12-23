@@ -6,7 +6,7 @@ import com.macrosoft.core.orm.hibernate.HibernateDao;
 import com.sxrs.pojo.UserEntity;
 
 @Repository  
-public class UserDao extends HibernateDao<UserEntity, Integer>  implements IUserDao{
+public class UserDao extends HibernateDao<UserEntity, String>  implements IUserDao{
 	@Override
 	public void saveUserEntity(UserEntity userEntity) {
 		this.save(userEntity);
