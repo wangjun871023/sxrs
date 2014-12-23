@@ -34,6 +34,7 @@ drop table if exists dept_table;
 create table dept_table(
     id varchar(255) not null primary key comment '部门id',
     dept_name varchar(255) comment '部门名称',
+    dept_parent_id varchar(255) comment '父级部门id',
     create_user varchar(255) comment '创建用户id',
     update_user varchar(255) comment '更新用户id',
     create_time varchar(255) comment '创建时间',
@@ -105,6 +106,3 @@ create table model_table(
     create_time varchar(255) comment '创建时间',
     update_time varchar(255) comment '更新时间'
 );
-
-
-

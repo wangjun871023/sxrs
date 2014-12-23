@@ -1,7 +1,5 @@
 package com.sxrs.pojo;
 
-// default package
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +18,7 @@ public class DeptEntity implements java.io.Serializable {
 
 	private String id;
 	private String deptName;
+	private String deptParentId;
 	private String createUser;
 	private String updateUser;
 	private String createTime;
@@ -32,9 +31,10 @@ public class DeptEntity implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public DeptEntity(String deptName, String createUser, String updateUser,
-			String createTime, String updateTime) {
+	public DeptEntity(String deptName, String deptParentId, String createUser,
+			String updateUser, String createTime, String updateTime) {
 		this.deptName = deptName;
+		this.deptParentId = deptParentId;
 		this.createUser = createUser;
 		this.updateUser = updateUser;
 		this.createTime = createTime;
@@ -61,6 +61,15 @@ public class DeptEntity implements java.io.Serializable {
 
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
+	}
+
+	@Column(name = "dept_parent_id")
+	public String getDeptParentId() {
+		return this.deptParentId;
+	}
+
+	public void setDeptParentId(String deptParentId) {
+		this.deptParentId = deptParentId;
 	}
 
 	@Column(name = "create_user")
