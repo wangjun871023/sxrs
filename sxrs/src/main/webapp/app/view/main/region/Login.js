@@ -30,6 +30,10 @@ Ext.define("app.view.main.region.Login", {
 		anchor : '100%',
 		inputType : 'password',
 		name : 'password'
+	},{
+		xtype:"image",
+		src:"verfityCode/getCodeImage.do?width=100&height=40",
+		alt:"换一个"
 	}],
 	buttons : [ {
 		text : '登录',
