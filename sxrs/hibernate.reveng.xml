@@ -3,4 +3,9 @@
 
 <hibernate-reverse-engineering>
 	<table name="user_table" catalog="sxrs" class="UserEntity"></table>
+<table name="dept_table" catalog="sxrs" class="DeptEntity">
+	<primary-key>
+		<generator class="uuid2"></generator>
+	</primary-key>
+</table>
 </hibernate-reverse-engineering>
