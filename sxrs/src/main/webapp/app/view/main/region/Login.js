@@ -1,5 +1,6 @@
 Ext.define("app.view.main.region.Login", {
 	extend : "Ext.form.Panel",
+	alias : "widget.mainlogin",
 	animCollapse : true,
 	collapsible : true,
 	bodyPadding : 10,
@@ -26,7 +27,7 @@ Ext.define("app.view.main.region.Login", {
 		xtype : "combo",
 		fieldLabel : '机构',
 		anchor : '100%',
-        store:  "DeptStore",
+        store:  Ext.create("app.store.DeptStore"),
         queryMode: 'local',
         displayField: 'deptName',
         valueField: 'id'    

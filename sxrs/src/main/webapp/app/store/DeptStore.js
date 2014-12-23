@@ -1,10 +1,9 @@
 Ext.define('app.store.DeptStore', {
     extend: 'Ext.data.Store',
-	alias : "widget.deptStore",
     requires:[
         "app.model.DeptModel"
     ],   
-    model: "deptModel",
+    model: Ext.create("app.model.DeptModel"),
     autoLoad:true,
     proxy: {
          type: 'ajax',
