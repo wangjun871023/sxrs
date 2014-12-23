@@ -1,5 +1,4 @@
 package com.sxrs.pojo;
-
 // default package
 
 import javax.persistence.Column;
@@ -9,117 +8,150 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
+
 /**
  * UserEntity entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "user_table", catalog = "sxrs")
-public class UserEntity implements java.io.Serializable {
+@Table(name="user_table"
+    ,catalog="sxrs"
+)
 
-	// Fields
+public class UserEntity  implements java.io.Serializable {
 
-	private String id;
-	private String userName;
-	private String userPass;
-	private String staffId;
-	private String createUser;
-	private String updateUser;
-	private String createTime;
-	private String updateTime;
 
-	// Constructors
+    // Fields    
 
-	/** default constructor */
-	public UserEntity() {
-	}
+     private String id;
+     private String userName;
+     private String userPass;
+     private String userType;
+     private String staffId;
+     private String createUser;
+     private String updateUser;
+     private String createTime;
+     private String updateTime;
 
-	/** full constructor */
-	public UserEntity(String userName, String userPass, String staffId,
-			String createUser, String updateUser, String createTime,
-			String updateTime) {
-		this.userName = userName;
-		this.userPass = userPass;
-		this.staffId = staffId;
-		this.createUser = createUser;
-		this.updateUser = updateUser;
-		this.createTime = createTime;
-		this.updateTime = updateTime;
-	}
 
-	// Property accessors
-	@GenericGenerator(name = "generator", strategy = "uuid2")
-	@Id
-	@GeneratedValue(generator = "generator")
-	@Column(name = "id", unique = true, nullable = false)
-	public String getId() {
-		return this.id;
-	}
+    // Constructors
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    /** default constructor */
+    public UserEntity() {
+    }
 
-	@Column(name = "user_name")
-	public String getUserName() {
-		return this.userName;
-	}
+    
+    /** full constructor */
+    public UserEntity(String userName, String userPass, String userType, String staffId, String createUser, String updateUser, String createTime, String updateTime) {
+        this.userName = userName;
+        this.userPass = userPass;
+        this.userType = userType;
+        this.staffId = staffId;
+        this.createUser = createUser;
+        this.updateUser = updateUser;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+   
+    // Property accessors
+    @GenericGenerator(name="generator", strategy="uuid2")@Id @GeneratedValue(generator="generator")
+    
+    @Column(name="id", unique=true, nullable=false)
 
-	@Column(name = "user_pass")
-	public String getUserPass() {
-		return this.userPass;
-	}
+    public String getId() {
+        return this.id;
+    }
+    
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    @Column(name="user_name")
 
-	public void setUserPass(String userPass) {
-		this.userPass = userPass;
-	}
+    public String getUserName() {
+        return this.userName;
+    }
+    
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
+    @Column(name="user_pass")
 
-	@Column(name = "staff_id")
-	public String getStaffId() {
-		return this.staffId;
-	}
+    public String getUserPass() {
+        return this.userPass;
+    }
+    
+    public void setUserPass(String userPass) {
+        this.userPass = userPass;
+    }
+    
+    @Column(name="user_type")
 
-	public void setStaffId(String staffId) {
-		this.staffId = staffId;
-	}
+    public String getUserType() {
+        return this.userType;
+    }
+    
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+    
+    @Column(name="staff_id")
 
-	@Column(name = "create_user")
-	public String getCreateUser() {
-		return this.createUser;
-	}
+    public String getStaffId() {
+        return this.staffId;
+    }
+    
+    public void setStaffId(String staffId) {
+        this.staffId = staffId;
+    }
+    
+    @Column(name="create_user")
 
-	public void setCreateUser(String createUser) {
-		this.createUser = createUser;
-	}
+    public String getCreateUser() {
+        return this.createUser;
+    }
+    
+    public void setCreateUser(String createUser) {
+        this.createUser = createUser;
+    }
+    
+    @Column(name="update_user")
 
-	@Column(name = "update_user")
-	public String getUpdateUser() {
-		return this.updateUser;
-	}
+    public String getUpdateUser() {
+        return this.updateUser;
+    }
+    
+    public void setUpdateUser(String updateUser) {
+        this.updateUser = updateUser;
+    }
+    
+    @Column(name="create_time")
 
-	public void setUpdateUser(String updateUser) {
-		this.updateUser = updateUser;
-	}
+    public String getCreateTime() {
+        return this.createTime;
+    }
+    
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+    
+    @Column(name="update_time")
 
-	@Column(name = "create_time")
-	public String getCreateTime() {
-		return this.createTime;
-	}
+    public String getUpdateTime() {
+        return this.updateTime;
+    }
+    
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+   
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
 
-	@Column(name = "update_time")
-	public String getUpdateTime() {
-		return this.updateTime;
-	}
 
-	public void setUpdateTime(String updateTime) {
-		this.updateTime = updateTime;
-	}
+
+
+
+
 
 }

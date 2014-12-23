@@ -6,5 +6,7 @@
 	<session-factory>
 		<mapping class="com.sxrs.pojo.UserEntity" />
 		<mapping class="com.sxrs.pojo.DeptEntity" />
+		<mapping class="com.sxrs.pojo.MenuEntity" />
+		<mapping class="com.sxrs.pojo.ModelEntity" />
 	</session-factory>
 </hibernate-configuration>

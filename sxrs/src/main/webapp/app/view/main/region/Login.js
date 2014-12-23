@@ -15,12 +15,14 @@ Ext.define("app.view.main.region.Login", {
 		labelWidth : 50
 	},
 	items : [ {
-		fieldLabel : '用户',
+		fieldLabel : '用户名',
 		anchor : '100%',
-		name : 'username'
+		name : 'username',
+        emptyText:"请输入用户名"
 	}, {
 		fieldLabel : '密 码',
 		anchor : '100%',
+        emptyText:"请输入密码",
 		inputType : 'password',
 		name : 'password'
 	}, {
@@ -30,6 +32,8 @@ Ext.define("app.view.main.region.Login", {
         store:  Ext.create("app.store.DeptStore"),
         queryMode: 'local',
         displayField: 'deptName',
+        editable:false,
+        emptyText:"请选择部门",
         valueField: 'id'    
 	}, {
 		xtype : "container",
@@ -39,6 +43,7 @@ Ext.define("app.view.main.region.Login", {
 			xtype : 'textfield',
 			width:155,
 			labelWidth : 50,
+            emptyText:"下方验证码",
 			name : 'password'
 		},{
 			xtype:"button",

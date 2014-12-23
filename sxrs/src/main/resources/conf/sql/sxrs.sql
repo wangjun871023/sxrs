@@ -9,6 +9,7 @@ create table user_table(
     id varchar(255) not null primary key comment '用户id',
     user_name varchar(255) comment '用户名',
     user_pass varchar(255) comment '密码',
+    user_type varchar(255) comment '用户类别',
     staff_id varchar(255) comment '职员id',
     create_user varchar(255) comment '创建用户id',
     update_user varchar(255) comment '更新用户id',
@@ -76,6 +77,29 @@ drop table if exists info_type_table;
 create table info_type_table(
     id varchar(255) not null primary key comment '信息类别id',
     dept_name varchar(255) comment '信息类别名称',
+    create_user varchar(255) comment '创建用户id',
+    update_user varchar(255) comment '更新用户id',
+    create_time varchar(255) comment '创建时间',
+    update_time varchar(255) comment '更新时间'
+);
+
+--菜单表
+drop table if exists menu_table;
+create table menu_table(
+    id varchar(255) not null primary key comment '菜单id',
+    menu_name varchar(255) comment '菜单名称',
+    model_ids varchar(255) comment '菜单包含模块ids',
+    create_user varchar(255) comment '创建用户id',
+    update_user varchar(255) comment '更新用户id',
+    create_time varchar(255) comment '创建时间',
+    update_time varchar(255) comment '更新时间'
+);
+
+--模块表
+drop table if exists model_table;
+create table model_table(
+    id varchar(255) not null primary key comment '模块id',
+    model_name varchar(255) comment '模块名称',
     create_user varchar(255) comment '创建用户id',
     update_user varchar(255) comment '更新用户id',
     create_time varchar(255) comment '创建时间',
