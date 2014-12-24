@@ -7,6 +7,7 @@ Ext.define("app.view.main.region.DeptPanel", {
     ],
     store: Ext.create('app.store.DeptTreeStore'),
     useArrows:true,
+    mask:"读取中",
     listeners:{
         itemclick:function(obj,record){
             if(record.isRoot()==false){
@@ -17,8 +18,9 @@ Ext.define("app.view.main.region.DeptPanel", {
                 this.up("app-main").down("mainAdmin").setHidden(true);
             } 
         },
-        afterrender:function(panel){
-           panel.expandAll(); 
+        beforerender:function(panel){
+            panel.getRootNode().expand(false, false);
+            panel.getStore().load();
         }
     }
 });

@@ -7,6 +7,7 @@ Ext.define('app.store.DeptTreeStore', {
     autoLoad:true,
     root: {
         text:"公司部门",
+        expaneded:true,
         children:[]
     },
     proxy: {

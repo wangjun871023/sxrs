@@ -17,6 +17,12 @@ create table user_table(
     update_time varchar(255) comment '更新时间'
 );
 
+insert into user_table(id,user_name,user_pass,user_type) values('0001','admin','admin','0001');
+insert into user_table(id,user_name,user_pass,user_type) values('0002','dept','dept','0002');
+insert into user_table(id,user_name,user_pass,user_type) values('0003','person','person','0003');
+
+
+
 --职员表
 drop table if exists staff_table;
 create table  staff_table(

@@ -4,5 +4,5 @@ import com.sxrs.pojo.UserEntity;
 
 
 public interface IUserDao {
-	void saveUserEntity(UserEntity userEntity);
+	UserEntity getUserByUserName(String userName);
 }
