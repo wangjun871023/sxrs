@@ -72,6 +72,7 @@ Ext.define("app.view.main.region.Login", {
             var mainDept= this.up("app-main").down("mainDept");
             var mainNewsInfoMore = this.up("app-main").down("mainNewsInfoMore");
             var mainAdmin= this.up("app-main").down("mainAdmin");
+            var menuItem= this.up("app-main").down("menuItem");
 
             if (form.isValid()) {
                 form.submit({
@@ -79,20 +80,50 @@ Ext.define("app.view.main.region.Login", {
                     waitMsg: "登录中", 
                     success : function(form, action) {
                         if(action.result.model.mid == "0001"){
-
+                         menuItem.getStore().load({
+                               params: {
+                                    userType:"0001"
+                               },
+                               callback: function(records, operation, success) {
+                                    mainView.setHidden(true);
+                                    mainDept.setHidden(true);
+                                    mainNewsInfo.setHidden(true);
+                                    mainNewsInfoMore.setHidden(true);
+                                    mainAdmin.setHidden(false);
+                               }
+                           });
                         }
 
                         if(action.result.model.mid == "0002"){
+                           menuItem.getStore().load({
+                               params: {
+                                    userType:"0002"
+                               },
+                               callback: function(records, operation, success) {
+                                    mainView.setHidden(true);
+                                    mainDept.setHidden(true);
+                                    mainNewsInfo.setHidden(true);
+                                    mainNewsInfoMore.setHidden(true);
+                                    mainAdmin.setHidden(false);
+                               }
+                           });
                         }
 
                         if(action.result.model.mid == "0003"){
+                          menuItem.getStore().load({
+                               params: {
+                                    userType:"0003"
+                               },
+                               callback: function(records, operation, success) {
+                                    mainView.setHidden(true);
+                                    mainDept.setHidden(true);
+                                    mainNewsInfo.setHidden(true);
+                                    mainNewsInfoMore.setHidden(true);
+                                    mainAdmin.setHidden(false);
+                               }
+                           });
                         }
 
-                        mainView.setHidden(true);
-                        mainDept.setHidden(true);
-                        mainNewsInfo.setHidden(true);
-                        mainNewsInfoMore.setHidden(true);
-                        mainAdmin.setHidden(false);
                     },
                     failure : function(form, action) {
                         Ext.Msg.alert('操作失败', action.result.model.info);

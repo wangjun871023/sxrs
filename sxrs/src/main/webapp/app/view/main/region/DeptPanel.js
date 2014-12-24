@@ -20,7 +20,6 @@ Ext.define("app.view.main.region.DeptPanel", {
         },
         beforerender:function(panel){
             panel.getRootNode().expand(false, false);
-            panel.getStore().load();
         }
     }
 });

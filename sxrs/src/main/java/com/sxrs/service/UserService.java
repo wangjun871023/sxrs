@@ -21,9 +21,6 @@ public class UserService implements IUserService {
 			String deptId, String verifyCode) {
 		BaseForm temp = new BaseForm();
 		boolean result = false;
-		//用户类别
-		String userType = "";
-		
 		// 校验验证码
 		if (!checkVerifyCode(session, verifyCode)) {
 			temp.setSuccess(false);
@@ -31,13 +28,13 @@ public class UserService implements IUserService {
 			return temp;
 		}
 		// 检验用户信息
-		if (!checkUserInfo(userEntity,userType)) {
+		if (!checkUserInfo(userEntity)) {
 			temp.setSuccess(false);
 			temp.setInfo("用户信息错误！");
 			return temp;
 		}
-		
-		temp.setMid(userType);
+		//设置用户类别
+		temp.setMid(userEntity.getUserType());
 		temp.setSuccess(true);
 		return temp;
 	}
@@ -46,15 +43,14 @@ public class UserService implements IUserService {
 	 * 检验用户信息
 	 * 
 	 * @param userEntity
-	 * @param userType 
 	 * @return
 	 */
-	private boolean checkUserInfo(UserEntity userEntity, String userType) {
+	private boolean checkUserInfo(UserEntity userEntity) {
 		if (userEntity != null) {
 			//检验密码
 			UserEntity user = userDao.getUserByUserName(userEntity.getUserName());
-			userType = user.getUserType();
 			if(user!=null){
+				userEntity.setUserType(user.getUserType());
 				return true;
 			}
 		}
