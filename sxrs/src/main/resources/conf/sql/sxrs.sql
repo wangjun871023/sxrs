@@ -89,20 +89,40 @@ drop table if exists menu_table;
 create table menu_table(
     id varchar(255) not null primary key comment '菜单id',
     menu_name varchar(255) comment '菜单名称',
-    model_ids varchar(255) comment '菜单包含模块ids',
-    create_user varchar(255) comment '创建用户id',
     update_user varchar(255) comment '更新用户id',
     create_time varchar(255) comment '创建时间',
     update_time varchar(255) comment '更新时间'
 );
+
+insert into menu_table(id,menu_name) values('0001','系统管理员菜单');
+insert into menu_table(id,menu_name) values('0002','部门管理员菜单');
+insert into menu_table(id,menu_name) values('0003','普通用户菜单');
 
 --模块表
 drop table if exists model_table;
 create table model_table(
     id varchar(255) not null primary key comment '模块id',
     model_name varchar(255) comment '模块名称',
+    menu_id varchar(255) comment '所属菜单id',
     create_user varchar(255) comment '创建用户id',
     update_user varchar(255) comment '更新用户id',
     create_time varchar(255) comment '创建时间',
     update_time varchar(255) comment '更新时间'
 );
+
+--系统管理员菜单
+insert into model_table(id,model_name,menu_id) values('0001','部门人员维护','0001');
+insert into model_table(id,model_name,menu_id) values('0002','信息发布','0001');
+insert into model_table(id,model_name,menu_id) values('0003','个人信息','0001');
+insert into model_table(id,model_name,menu_id) values('0003','当前关注','0001');
+--部门管理员菜单
+insert into model_table(id,model_name,menu_id) values('0004','信息发布','0002');
+insert into model_table(id,model_name,menu_id) values('0005','人员维护','0002');
+insert into model_table(id,model_name,menu_id) values('0006','个人信息','0002');
+--普通用户菜单
+insert into model_table(id,model_name,menu_id) values('0007','网上投票','0003');
+insert into model_table(id,model_name,menu_id) values('0008','网上考试','0003');
+insert into model_table(id,model_name,menu_id) values('0009','网上测评','0003');
+insert into model_table(id,model_name,menu_id) values('0010','个人信息','0003');
+
+

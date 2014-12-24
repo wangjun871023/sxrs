@@ -19,7 +19,6 @@ public class MenuEntity implements java.io.Serializable {
 	private String id;
 	private String menuName;
 	private String modelIds;
-	private String createUser;
 	private String updateUser;
 	private String createTime;
 	private String updateTime;
@@ -31,11 +30,10 @@ public class MenuEntity implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public MenuEntity(String menuName, String modelIds, String createUser,
-			String updateUser, String createTime, String updateTime) {
+	public MenuEntity(String menuName, String modelIds, String updateUser,
+			String createTime, String updateTime) {
 		this.menuName = menuName;
 		this.modelIds = modelIds;
-		this.createUser = createUser;
 		this.updateUser = updateUser;
 		this.createTime = createTime;
 		this.updateTime = updateTime;
@@ -70,15 +68,6 @@ public class MenuEntity implements java.io.Serializable {
 
 	public void setModelIds(String modelIds) {
 		this.modelIds = modelIds;
-	}
-
-	@Column(name = "create_user")
-	public String getCreateUser() {
-		return this.createUser;
-	}
-
-	public void setCreateUser(String createUser) {
-		this.createUser = createUser;
 	}
 
 	@Column(name = "update_user")
