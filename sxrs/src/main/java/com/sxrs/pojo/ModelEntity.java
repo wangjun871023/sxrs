@@ -18,6 +18,7 @@ public class ModelEntity implements java.io.Serializable {
 
 	private String id;
 	private String modelName;
+	private String menuId;
 	private String createUser;
 	private String updateUser;
 	private String createTime;
@@ -30,9 +31,10 @@ public class ModelEntity implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public ModelEntity(String modelName, String createUser, String updateUser,
-			String createTime, String updateTime) {
+	public ModelEntity(String modelName, String menuId, String createUser,
+			String updateUser, String createTime, String updateTime) {
 		this.modelName = modelName;
+		this.menuId = menuId;
 		this.createUser = createUser;
 		this.updateUser = updateUser;
 		this.createTime = createTime;
@@ -59,6 +61,15 @@ public class ModelEntity implements java.io.Serializable {
 
 	public void setModelName(String modelName) {
 		this.modelName = modelName;
+	}
+
+	@Column(name = "menu_id")
+	public String getMenuId() {
+		return this.menuId;
+	}
+
+	public void setMenuId(String menuId) {
+		this.menuId = menuId;
 	}
 
 	@Column(name = "create_user")
