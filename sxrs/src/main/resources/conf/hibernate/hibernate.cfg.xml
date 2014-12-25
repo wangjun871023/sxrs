@@ -8,5 +8,6 @@
 		<mapping class="com.sxrs.pojo.DeptEntity" />
 		<mapping class="com.sxrs.pojo.MenuEntity" />
 		<mapping class="com.sxrs.pojo.ModelEntity" />
+		<mapping class="com.sxrs.pojo.InfoEntity" />
 	</session-factory>
 </hibernate-configuration>

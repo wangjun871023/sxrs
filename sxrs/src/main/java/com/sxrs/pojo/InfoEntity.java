@@ -9,17 +9,19 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * DeptEntity entity. @author MyEclipse Persistence Tools
+ * InfoEntity entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "dept_table", catalog = "sxrs")
-public class DeptEntity implements java.io.Serializable {
+@Table(name = "info_table", catalog = "sxrs")
+public class InfoEntity implements java.io.Serializable {
 
 	// Fields
 
 	private String id;
 	private String deptName;
-	private String deptParentId;
+	private String infoTime;
+	private String infoCount;
+	private String infoTypeId;
 	private String createUser;
 	private String updateUser;
 	private String createTime;
@@ -28,14 +30,17 @@ public class DeptEntity implements java.io.Serializable {
 	// Constructors
 
 	/** default constructor */
-	public DeptEntity() {
+	public InfoEntity() {
 	}
 
 	/** full constructor */
-	public DeptEntity(String deptName, String deptParentId, String createUser,
-			String updateUser, String createTime, String updateTime) {
+	public InfoEntity(String deptName, String infoTime, String infoCount,
+			String infoTypeId, String createUser, String updateUser,
+			String createTime, String updateTime) {
 		this.deptName = deptName;
-		this.deptParentId = deptParentId;
+		this.infoTime = infoTime;
+		this.infoCount = infoCount;
+		this.infoTypeId = infoTypeId;
 		this.createUser = createUser;
 		this.updateUser = updateUser;
 		this.createTime = createTime;
@@ -64,13 +69,31 @@ public class DeptEntity implements java.io.Serializable {
 		this.deptName = deptName;
 	}
 
-	@Column(name = "dept_parent_id")
-	public String getDeptParentId() {
-		return this.deptParentId;
+	@Column(name = "info_time")
+	public String getInfoTime() {
+		return this.infoTime;
 	}
 
-	public void setDeptParentId(String deptParentId) {
-		this.deptParentId = deptParentId;
+	public void setInfoTime(String infoTime) {
+		this.infoTime = infoTime;
+	}
+
+	@Column(name = "info_count")
+	public String getInfoCount() {
+		return this.infoCount;
+	}
+
+	public void setInfoCount(String infoCount) {
+		this.infoCount = infoCount;
+	}
+
+	@Column(name = "info_type_id")
+	public String getInfoTypeId() {
+		return this.infoTypeId;
+	}
+
+	public void setInfoTypeId(String infoTypeId) {
+		this.infoTypeId = infoTypeId;
 	}
 
 	@Column(name = "create_user")
