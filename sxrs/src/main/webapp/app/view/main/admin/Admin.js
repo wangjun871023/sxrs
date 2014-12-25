@@ -5,7 +5,8 @@ Ext.define("app.view.main.admin.Admin", {
 	height:550,
 	border:false,
 	requires : [
-        "app.view.main.admin.MenuItem"
+        "app.view.main.admin.MenuItem",
+        "app.view.main.admin.InfoManager"
     ],
 	items : [{
 		region:"west",
@@ -22,7 +23,11 @@ Ext.define("app.view.main.admin.Admin", {
 		region:"center",
 		xtype:"tabpanel",
 		id:"admin-tabpanel",
-		items:[]
+		items:[{
+    		xtype:"infoManager",
+    		closable : true,
+    		title:"信息发布"
+    	}]
 	}]
 });
 

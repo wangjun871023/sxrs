@@ -3,10 +3,12 @@ Ext.define("app.view.main.admin.InfoManager", {
 	alias : "widget.infoManager",
 	layout:"border",
 	border:false,
+	requires : [
+        "app.view.main.admin.InfoTypeTree"
+    ],
 	items : [{
+		xtype:"infoTypeTree",
 		region:"west",
-		xtype:"treepanel",
-		border:false,
 		width:230
 	},{	
 		xtype:"panel",

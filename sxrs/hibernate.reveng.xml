@@ -21,7 +21,14 @@
 			<generator class="uuid2"></generator>
 		</primary-key>
 	</table>
-<table name="info_table" catalog="sxrs" class="com.sxrs.pojo.InfoEntity">
+	<table name="info_table" catalog="sxrs"
+		class="com.sxrs.pojo.InfoEntity">
+		<primary-key>
+			<generator class="uuid2"></generator>
+		</primary-key>
+	</table>
+<table name="info_type_table" catalog="sxrs"
+	class="com.sxrs.pojo.InfoTypeEntity">
 	<primary-key>
 		<generator class="uuid2"></generator>
 	</primary-key>

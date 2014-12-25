@@ -69,7 +69,7 @@ insert into dept_table(id,dept_name) values("0017","信息技术部");
 drop table if exists info_table;
 create table info_table(
     id varchar(255) not null primary key comment '信息id',
-    dept_name varchar(255) comment '信息标题',
+    info_title varchar(255) comment '信息标题',
     info_time varchar(255) comment '信息发布时间',
     info_count varchar(255) comment '信息浏览次数',
     info_type_id varchar(255) comment '信息类型id',
@@ -83,12 +83,18 @@ create table info_table(
 drop table if exists info_type_table;
 create table info_type_table(
     id varchar(255) not null primary key comment '信息类别id',
-    dept_name varchar(255) comment '信息类别名称',
+    info_type_name varchar(255) comment '信息类别名称',
     create_user varchar(255) comment '创建用户id',
     update_user varchar(255) comment '更新用户id',
     create_time varchar(255) comment '创建时间',
     update_time varchar(255) comment '更新时间'
 );
+
+insert into info_type_table(id,info_type_name) values('0001','通知发文');
+insert into info_type_table(id,info_type_name) values('0002','热点关注');
+insert into info_type_table(id,info_type_name) values('0003','理论学习');
+insert into info_type_table(id,info_type_name) values('0004','信息交流');
+insert into info_type_table(id,info_type_name) values('0005','每日更新');
 
 --菜单表
 drop table if exists menu_table;
