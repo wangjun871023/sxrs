@@ -196,7 +196,7 @@ Ext.define('app.view.common.HtmlEditorImage', {
 				success : function(response, options){
 					var result = options.result;
 					if(!result.success){
-						Ext.MessageBox.alert('温馨提示',options.result.model.successInfo);
+						Ext.MessageBox.alert('温馨提示',options.result.model.info);
 						return;
 					}
 					scope.insertImg(view,result.model);

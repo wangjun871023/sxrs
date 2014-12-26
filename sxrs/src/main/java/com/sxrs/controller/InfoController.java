@@ -68,5 +68,41 @@ public class InfoController {
 		return null;
     }  
     
+    @RequestMapping(value="/uploadFile")  
+    public @ResponseBody Map<String, Object> uploadFile(MultipartFile file,HttpServletRequest request) {  
+    	try {
+    		BaseForm tmp = new BaseForm();
+    		String path = request.getSession().getServletContext().getRealPath("/uploadFile");  
+    		
+    		File targetFile = new File(path, file.getOriginalFilename());  
+	        if(!targetFile.exists()){  
+	            targetFile.mkdirs();  
+	        }  
+	        file.transferTo(targetFile);
+	        tmp.setMname(file.getOriginalFilename());
+	        tmp.setDir("/sxrs/uploadFile/"+file.getOriginalFilename());
+    		tmp.setSuccess(true);
+    		return ResponseUtils.sendBaseForm(tmp);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e, e);
+		}
+		return null;
+    }  
+    
+    
+    @RequestMapping(value="/addInfo")  
+    public @ResponseBody Map<String, Object> addInfo() {  
+    	try {
+    		BaseForm tmp = new BaseForm();
+    		
+    		tmp.setSuccess(true);
+    		return ResponseUtils.sendBaseForm(tmp);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e, e);
+		}
+		return null;
+    }  
     
 }  

@@ -37,7 +37,7 @@ Ext.define('app.view.common.HtmlEditorAttachment', {
 		var scope = this;
 		Ext.create('Ext.window.Window',{
 			width : 400,
-			height : 315,
+			height : 345,
 			title : scope.langTitle,
 			layout : 'fit',
 			autoShow : true,
@@ -67,9 +67,8 @@ Ext.define('app.view.common.HtmlEditorAttachment', {
 					items : [{
 						xtype : 'fileuploadfield',
 						fieldLabel : '选择文件',
-//						beforeLabelTextTpl : zc.getStar(),
 						buttonText : '请选择...',
-						name : 'upload',
+						name : 'file',
 						emptyText : '请选择文件',
 						blankText : '文件不能为空',
 						listeners : {
@@ -162,13 +161,11 @@ Ext.define('app.view.common.HtmlEditorAttachment', {
 				    buttons : [{
 						text : '保存',
 						action : 'btn_save',
-						iconCls : 'saveIcon',
 						handler : function(btn){
 							scope.saveUploadAttachment(btn,view);
 						}
 					},{
 						text : '取消',
-						iconCls : 'cancelIcon',
 						handler : function(btn){
 							btn.up('window').close();
 						}
@@ -189,7 +186,6 @@ Ext.define('app.view.common.HtmlEditorAttachment', {
 		if(!(scope.getAttachmentTypeCheck(scope.getAttachmentHZ(fileName)))){
 			Ext.MessageBox.alert('温馨提示','上传附件类型有误');
 			//清空插入内容
-			fileObj.reset();
 			fileNameObj.setValue('');
 			contentObj.setValue('');
 			return;
@@ -240,7 +236,7 @@ Ext.define('app.view.common.HtmlEditorAttachment', {
 		var formObj = btn.up('form');//获取Form对象
 		if(formObj.isValid()){ //验证Form表单
 			formObj.form.doAction('submit',{
-//				url : zc.bp() + '/bdata_Thtmleditor_getUploadAttachment.action',
+				url :  'info/uploadFile.do',
 				method : 'POST',
 				submitEmptyText : false,
 				waitMsg : '正在上传附件,请稍候...',
@@ -248,14 +244,14 @@ Ext.define('app.view.common.HtmlEditorAttachment', {
 				success : function(response, options){
 					var result = options.result;
 					if(!result.success){
-						Ext.MessageBox.alert('温馨提示',result.msg);
+						Ext.MessageBox.alert('温馨提示',result.model.info);
 						return;
 					}
-					scope.insertAttachment(view,result.data);
+					scope.insertAttachment(view,result.model);
 					windowObj.close();//关闭窗体
 				},
 				failure : function(response, options){
-					Ext.MessageBox.alert('温馨提示',options.result.msg);
+					Ext.MessageBox.alert('温馨提示',options.result.model.info);
 				}
 			});
 		}
@@ -265,8 +261,8 @@ Ext.define('app.view.common.HtmlEditorAttachment', {
 	 * 插入附件
 	 * */
 	insertAttachment : function(view,data){
-		var url = data.url;
-		var fileName = data.fileName;
+		var url = data.dir;
+		var fileName = data.mname;
 		var content = data.content;
 		var str = '&nbsp;<a  target="_blank" href="' + url + '" ';
 		if(content != undefined && content != null && content != ''){

@@ -55,14 +55,12 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
 				name:"content"
 			}]
 		},{
-			fieldLabel: '内容',
-			labelWidth : 50
-		},{
+			flex:1,
+			allowBlank : false,
 			width:"100%",
-			height:500,
-			enableSourceEdit : false,
 			xtype:"htmleditor",
-		    plugins : [
+			enableSourceEdit :false,
+			plugins : [
 	        	Ext.create('app.view.common.HtmlEditorImage'),
 	        	Ext.create('app.view.common.HtmlEditorAttachment')
 	        ],
