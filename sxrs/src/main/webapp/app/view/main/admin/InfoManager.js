@@ -10,7 +10,7 @@ Ext.define("app.view.main.admin.InfoManager", {
 	items : [{
 		xtype:"infoTypeTree",
 		region:"west",
-		width:230
+		width:200
 	},{	
 		xtype:"infoGrid",
 		border:false,
