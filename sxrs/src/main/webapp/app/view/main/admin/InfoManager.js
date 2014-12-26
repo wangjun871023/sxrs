@@ -17,5 +17,3 @@ Ext.define("app.view.main.admin.InfoManager", {
 		region:"center"
 	}]
 });
-
-

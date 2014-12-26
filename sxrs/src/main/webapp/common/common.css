@@ -107,6 +107,17 @@
 	background-color: #eee;
 }
 
+
+.htmlEditorImgIcon{
+	background-image: url(../resources/icon/image.png);
+}
+
+.htmlEditorFileIcon{
+	background-image: url(../resources/icon/link.png);
+}
+
+
+
 a:link { 
     color:black;
     text-decoration:none; 

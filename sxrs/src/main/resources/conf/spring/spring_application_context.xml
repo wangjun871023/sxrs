@@ -73,7 +73,7 @@
 				</prop>
 				<prop key="hibernate.cache.provider_configuration_file_resource_path">/ehcache.xml</prop>
 				<prop key="hibernate.cache.use_second_level_cache">true</prop>
-				<prop key="hibernate.cache.use_query_cache">true</prop> 
+				<prop key="hibernate.cache.use_query_cache">true</prop>
 			</props>
 		</property>
 	</bean>
@@ -133,12 +133,17 @@
 	<aop:config>
 		<aop:advisor pointcut="execution(* com.sxrs.service.*Service.*(..))"
 			advice-ref="txAdvice" />
-		<aop:advisor pointcut="execution(* com.macrosoft.core.orm.hibernate.*Dao.*(..))" 
-			advice-ref="txAdvice" /> 
+		<aop:advisor
+			pointcut="execution(* com.macrosoft.core.orm.hibernate.*Dao.*(..))"
+			advice-ref="txAdvice" />
 		<aop:advisor pointcut="execution(* org.springside.examples..*Service.*(..))"
 			advice-ref="txAdvice" />
 	</aop:config>
 
+
+	<!-- 支持上传文件 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
 	<!-- SpringContextHandler定义 -->
 	<bean class="com.macrosoft.core.SpringContextHolder" lazy-init="true" />

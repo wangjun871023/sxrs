@@ -8,6 +8,10 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
 	layout: 'fit',
 	maximizable : true,
 	modal:true,
+	requires : [
+        "app.view.common.HtmlEditorImage",
+        "app.view.common.HtmlEditorAttachment"
+    ],
 	items:[{
 		xtype:"container",
 		frame:false,
@@ -52,14 +56,16 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
 			}]
 		},{
 			fieldLabel: '内容',
-			labelWidth : 50,
-			frame:false,
-			flex:1,
-			allowBlank : false,
-			border:false,
+			labelWidth : 50
+		},{
 			width:"100%",
-			height:"100%",
+			height:500,
+			enableSourceEdit : false,
 			xtype:"htmleditor",
+		    plugins : [
+	        	Ext.create('app.view.common.HtmlEditorImage'),
+	        	Ext.create('app.view.common.HtmlEditorAttachment')
+	        ],
 			listeners:{
 				change:function(editor,newValue){
 		        	var content = this.up("addWin").down("textfield[name='content']");
