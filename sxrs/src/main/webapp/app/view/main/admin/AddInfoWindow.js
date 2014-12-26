@@ -8,6 +8,7 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
 	layout: 'fit',
 	maximizable : true,
 	modal:true,
+	infoType:null,
 	requires : [
         "app.view.common.HtmlEditorImage",
         "app.view.common.HtmlEditorAttachment"
@@ -30,12 +31,18 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
 				labelWidth : 50
 			},
 			items:[{
-				fieldLabel: '标题'
+				fieldLabel: '标题',
+				name:"infoTitle"
 			},{
+				xtype:"displayfield",
 				fieldLabel: '类别'
 			},{
+				hidden:true,
+				name:"infoTypeId"
+			},{
 				fieldLabel: '文号',
-				allowBlank : false
+				allowBlank :true,
+				name:"infoNo"
 			},{
 				fieldLabel: '紧急',
 				xtype:"combo",
@@ -49,10 +56,11 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
 			    queryMode: 'local',
 			    editable:false,
 			    displayField: 'name',
+			    name:"infoEms",
 			    valueField: 'id'
 			},{
 				hidden:true,
-				name:"content"
+				name:"infoContent"
 			}]
 		},{
 			flex:1,
@@ -66,7 +74,7 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
 	        ],
 			listeners:{
 				change:function(editor,newValue){
-		        	var content = this.up("addWin").down("textfield[name='content']");
+		        	var content = this.up("addWin").down("textfield[name='infoContent']");
 		        	content.setValue(newValue);
 				}
 			}
@@ -78,6 +86,7 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
         	var form = this.up("addWin").down("form").getForm();
         	if (form.isValid()) {
                   form.submit({
+                	  url:"info/addInfo.do",
                       success: function(form, action) {
                          Ext.Msg.alert('Success', action.result.msg);
                       },
@@ -93,5 +102,11 @@ Ext.define("app.view.main.admin.AddInfoWindow", {
         handler: function() {
         	this.up("addWin").close();
         }
-    }]
+    }],
+    listeners:{
+    	beforerender:function(){
+        	this.down("textfield[name='infoTypeId']").setValue(this.infoType.infoTypeId);
+        	this.down("displayfield").setValue(this.infoType.infoTypeName);
+    	}
+    }
 });

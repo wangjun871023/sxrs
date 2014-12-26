@@ -1,6 +1,7 @@
 package com.sxrs.controller;  
   
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -48,17 +49,7 @@ public class InfoController {
     public @ResponseBody Map<String, Object> uploadInfoImage(MultipartFile file,HttpServletRequest request,String title,String width,String height) {  
     	try {
     		BaseForm tmp = new BaseForm();
-    		String path = request.getSession().getServletContext().getRealPath("/uploadFile");  
-    		
-    		File targetFile = new File(path, file.getOriginalFilename());  
-	        if(!targetFile.exists()){  
-	            targetFile.mkdirs();  
-	        }  
-	        file.transferTo(targetFile);
-	        tmp.setMname(title);
-	        tmp.setPageNo(width);
-	        tmp.setMid(height);
-	        tmp.setDir("/sxrs/uploadFile/"+file.getOriginalFilename());
+    		infoService.uploadInfoImage(file, request, title, width, height, tmp);
     		tmp.setSuccess(true);
     		return ResponseUtils.sendBaseForm(tmp);
 		} catch (Exception e) {
@@ -66,21 +57,13 @@ public class InfoController {
 			logger.error(e, e);
 		}
 		return null;
-    }  
-    
+    }
+
     @RequestMapping(value="/uploadFile")  
     public @ResponseBody Map<String, Object> uploadFile(MultipartFile file,HttpServletRequest request) {  
     	try {
     		BaseForm tmp = new BaseForm();
-    		String path = request.getSession().getServletContext().getRealPath("/uploadFile");  
-    		
-    		File targetFile = new File(path, file.getOriginalFilename());  
-	        if(!targetFile.exists()){  
-	            targetFile.mkdirs();  
-	        }  
-	        file.transferTo(targetFile);
-	        tmp.setMname(file.getOriginalFilename());
-	        tmp.setDir("/sxrs/uploadFile/"+file.getOriginalFilename());
+    		infoService.uploadFile(file, request, tmp);
     		tmp.setSuccess(true);
     		return ResponseUtils.sendBaseForm(tmp);
 		} catch (Exception e) {
@@ -88,14 +71,13 @@ public class InfoController {
 			logger.error(e, e);
 		}
 		return null;
-    }  
-    
-    
+    }
+
     @RequestMapping(value="/addInfo")  
-    public @ResponseBody Map<String, Object> addInfo() {  
+    public @ResponseBody Map<String, Object> addInfo(InfoEntity info,String infoTypeId) {  
     	try {
     		BaseForm tmp = new BaseForm();
-    		
+    		infoService.addInfo(info,infoTypeId);
     		tmp.setSuccess(true);
     		return ResponseUtils.sendBaseForm(tmp);
 		} catch (Exception e) {

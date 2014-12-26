@@ -17,7 +17,21 @@ Ext.define("app.view.main.admin.InfoGrid", {
     tbar:[{
     	text:"新增信息",
     	handler:function(){
-    		Ext.create('app.view.main.admin.AddInfoWindow').show();
+    		var tree = this.up("app-main").down("infoTypeTree");
+    		var model = tree.getSelection();
+    		model = model[0];
+    		console.log(model);
+    		if(model==null || model.id=="root"){
+    			alert("请选择信息类别！");
+    		}else{
+    			var record = {
+    				"infoTypeName":model.data.infoTypeName,
+    				"infoTypeId":model.id
+    			};
+	    		Ext.create('app.view.main.admin.AddInfoWindow',{
+	    			infoType:record
+	    		}).show();
+    		}
     	}
     },{
     	text:"修改信息"

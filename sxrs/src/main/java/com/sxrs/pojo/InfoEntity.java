@@ -19,6 +19,10 @@ public class InfoEntity implements java.io.Serializable {
 	private String id;
 	private String infoTitle;
 	private String infoTime;
+	private String infoContent;
+	private String pictureUrl;
+	private String infoNo;
+	private String infoEms;
 	private String infoCount;
 	private String infoTypeId;
 	private String createUser;
@@ -33,11 +37,16 @@ public class InfoEntity implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public InfoEntity(String infoTitle, String infoTime, String infoCount,
+	public InfoEntity(String infoTitle, String infoTime, String infoContent,
+			String pictureUrl, String infoNo, String infoEms, String infoCount,
 			String infoTypeId, String createUser, String updateUser,
 			String createTime, String updateTime) {
 		this.infoTitle = infoTitle;
 		this.infoTime = infoTime;
+		this.infoContent = infoContent;
+		this.pictureUrl = pictureUrl;
+		this.infoNo = infoNo;
+		this.infoEms = infoEms;
 		this.infoCount = infoCount;
 		this.infoTypeId = infoTypeId;
 		this.createUser = createUser;
@@ -75,6 +84,42 @@ public class InfoEntity implements java.io.Serializable {
 
 	public void setInfoTime(String infoTime) {
 		this.infoTime = infoTime;
+	}
+
+	@Column(name = "info_content")
+	public String getInfoContent() {
+		return this.infoContent;
+	}
+
+	public void setInfoContent(String infoContent) {
+		this.infoContent = infoContent;
+	}
+
+	@Column(name = "picture_url")
+	public String getPictureUrl() {
+		return this.pictureUrl;
+	}
+
+	public void setPictureUrl(String pictureUrl) {
+		this.pictureUrl = pictureUrl;
+	}
+
+	@Column(name = "info_no")
+	public String getInfoNo() {
+		return this.infoNo;
+	}
+
+	public void setInfoNo(String infoNo) {
+		this.infoNo = infoNo;
+	}
+
+	@Column(name = "info_ems")
+	public String getInfoEms() {
+		return this.infoEms;
+	}
+
+	public void setInfoEms(String infoEms) {
+		this.infoEms = infoEms;
 	}
 
 	@Column(name = "info_count")
