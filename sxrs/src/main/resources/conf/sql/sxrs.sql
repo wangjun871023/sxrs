@@ -47,23 +47,23 @@ create table dept_table(
     update_time varchar(255) comment '更新时间'
 );
 
-insert into dept_table(id,dept_name) values("0001","办公室");
-insert into dept_table(id,dept_name) values("0002","工会工作部");
-insert into dept_table(id,dept_name) values("0003","监察部公室");
-insert into dept_table(id,dept_name) values("0004","销售督察部");
-insert into dept_table(id,dept_name) values("0005","内控合规部");
-insert into dept_table(id,dept_name) values("0006","人力资源部");
-insert into dept_table(id,dept_name) values("0007","教育培训部");
-insert into dept_table(id,dept_name) values("0008","电销中心");
-insert into dept_table(id,dept_name) values("0009","健康保险部");
-insert into dept_table(id,dept_name) values("0010","团体业务部");
-insert into dept_table(id,dept_name) values("0011","个险销售部");
-insert into dept_table(id,dept_name) values("0012","县域保险部");
-insert into dept_table(id,dept_name) values("0013","银行保险部");
-insert into dept_table(id,dept_name) values("0014","客服管理");
-insert into dept_table(id,dept_name) values("0015","业务管理");
-insert into dept_table(id,dept_name) values("0016","财务管理");
-insert into dept_table(id,dept_name) values("0017","信息技术部");
+insert into dept_table(id,dept_name) values('0001','办公室');
+insert into dept_table(id,dept_name) values('0002','工会工作部');
+insert into dept_table(id,dept_name) values('0003','监察部公室');
+insert into dept_table(id,dept_name) values('0004','销售督察部');
+insert into dept_table(id,dept_name) values('0005','内控合规部');
+insert into dept_table(id,dept_name) values('0006','人力资源部');
+insert into dept_table(id,dept_name) values('0007','教育培训部');
+insert into dept_table(id,dept_name) values('0008','电销中心');
+insert into dept_table(id,dept_name) values('0009','健康保险部');
+insert into dept_table(id,dept_name) values('0010','团体业务部');
+insert into dept_table(id,dept_name) values('0011','个险销售部');
+insert into dept_table(id,dept_name) values('0012','县域保险部');
+insert into dept_table(id,dept_name) values('0013','银行保险部');
+insert into dept_table(id,dept_name) values('0014','客服管理');
+insert into dept_table(id,dept_name) values('0015','业务管理');
+insert into dept_table(id,dept_name) values('0016','财务管理');
+insert into dept_table(id,dept_name) values('0017','信息技术部');
 
 --信息表
 drop table if exists info_table;
