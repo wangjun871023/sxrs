@@ -1,98 +1,98 @@
 .logSystem{
-	background-image: url(../resources/icon/brick.png);
+	background-image: url(/sxrs/resources/icon/brick.png);
 }
 
 .sdms{
-	background-image: url(../resources/icon/application_side_list.png);
+	background-image: url(/sxrs/resources/icon/application_side_list.png);
 }
 
 .accoutSys{
-	background-image: url(../resources/icon/folder_star.png);
+	background-image: url(/sxrs/resources/icon/folder_star.png);
 }
 
 .accoutBack{
-	background-image: url(../resources/icon/report.png);
+	background-image: url(/sxrs/resources/icon/report.png);
 }
 
 .hostWeb{
-	background-image: url(../resources/icon/world.png);
+	background-image: url(/sxrs/resources/icon/world.png);
 }
 
 .webIndex{
-	background-image: url(../resources/icon/world_link.png);
+	background-image: url(/sxrs/resources/icon/world_link.png);
 }
 
 .softDown{
-	background-image: url(../resources/icon/lorry_link.png);
+	background-image: url(/sxrs/resources/icon/lorry_link.png);
 }
 
 .examOnline{
-	background-image: url(../resources/icon/comment_edit.png);
+	background-image: url(/sxrs/resources/icon/comment_edit.png);
 }
 
 .evaluateOnline{
-	background-image: url(../resources/icon/overlays.png);
+	background-image: url(/sxrs/resources/icon/overlays.png);
 }
 
 .complaintSys{
-	background-image: url(../resources/icon/lightning.png);
+	background-image: url(/sxrs/resources/icon/lightning.png);
 }
 
 .regimeSearch{
-	background-image: url(../resources/icon/information.png);
+	background-image: url(/sxrs/resources/icon/information.png);
 }
 
 .knowLib{
-	background-image: url(../resources/icon/computer.png);
+	background-image: url(/sxrs/resources/icon/computer.png);
 }
 
 .dinerLib{
-	background-image: url(../resources/icon/cake.png);
+	background-image: url(/sxrs/resources/icon/cake.png);
 }
 
 .loginWeb{
-	background-image: url(../resources/icon/lock.png);
+	background-image: url(/sxrs/resources/icon/lock.png);
 }
 
 .picNews{
-	background-image: url(../resources/icon/pictures.png);
+	background-image: url(/sxrs/resources/icon/pictures.png);
 }
 
 .notifyPaper{
-	background-image: url(../resources/icon/shape_square_edit.png);
+	background-image: url(/sxrs/resources/icon/shape_square_edit.png);
 }
 
 .compDept{
-	background-image: url(../resources/icon/application_cascade.png);
+	background-image: url(/sxrs/resources/icon/application_cascade.png);
 }
 
 .hotAttention{
-	background-image: url(../resources/icon/star.png);
+	background-image: url(/sxrs/resources/icon/star.png);
 }
 
 .theoryStudy{
-	background-image: url(../resources/icon/book.png);
+	background-image: url(/sxrs/resources/icon/book.png);
 }
 
 .infoInteract{
-	background-image: url(../resources/icon/newspaper.png);
+	background-image: url(/sxrs/resources/icon/newspaper.png);
 }
 
 .webMaintain{
-	background-image: url(../resources/icon/world_edit.png);
+	background-image: url(/sxrs/resources/icon/world_edit.png);
 }
 
 .dayNews{
-	background-image: url(../resources/icon/new.png);
+	background-image: url(/sxrs/resources/icon/new.png);
 }
 
 
 .nowAttention{
-	background-image: url(../resources/icon/page.png);
+	background-image: url(/sxrs/resources/icon/page.png);
 }
 
 .compDeptInfo{
-	background-image: url(../resources/icon/link_go.png);
+	background-image: url(/sxrs/resources/icon/link_go.png);
 }
 
 .view {
@@ -109,11 +109,11 @@
 
 
 .htmlEditorImgIcon{
-	background-image: url(../resources/icon/image.png);
+	background-image: url(/sxrs/resources/icon/image.png);
 }
 
 .htmlEditorFileIcon{
-	background-image: url(../resources/icon/link.png);
+	background-image: url(/sxrs/resources/icon/link.png);
 }
 
 .x-htmleditor-iframe {

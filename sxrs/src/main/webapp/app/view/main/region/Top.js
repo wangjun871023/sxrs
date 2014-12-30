@@ -4,13 +4,10 @@
 Ext.define("app.view.main.region.Top", {
 	extend : "Ext.panel.Panel",
 	alias : "widget.maintop",
-	items : [ {
+	items : [{
 		xtype : "image",
-		bind : {
-			hidden : "{!system.iconTopUrl}",
-			src : "{system.iconTopUrl}"
-		}
-	} ],
+		src : "/sxrs/resources/imgs/chinalife.gif"
+	}],
 	bbar : [ {
 		width:70,
 		text : '日志系统',
