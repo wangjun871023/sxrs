@@ -5,7 +5,7 @@ Ext.define("app.view.main.region.Bottom", {
 	extend : "Ext.panel.Panel",
 	alias : "widget.mainbottom",
 	bodyStyle : {
-		background : 'url(/sxrs/resources/imgs/bottom_bg.gif)',
+		background : 'url(/sxrs/resources/imgs/bottom_bg.gif)'
 	},
 	bodyPadding : 10,
 	layout : "hbox",

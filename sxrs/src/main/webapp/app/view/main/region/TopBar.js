@@ -1,7 +1,6 @@
 /*
  *主界面 Topbar
  * */
-
 Ext.define('app.view.main.region.TopBar',{
     extend:"Ext.toolbar.Toolbar",
 	alias : "widget.mainTopBar",
@@ -26,11 +25,20 @@ Ext.define('app.view.main.region.TopBar',{
         }),
         listeners:{
             selectionchange: function(bar,node) {
-                 this.up("app-main").down("mainView").setHidden(true);
-                 this.up("app-main").down("mainNewsInfo").setHidden(true);
-                 this.up("app-main").down("mainDept").setHidden(true);
-                 this.up("app-main").down("mainNewsInfoMore").setHidden(true);
-                 this.up("app-main").down("mainAdmin").setHidden(false);
+            	 var id = getQueryString("id");	
+            	 if(id!=null){
+                     this.up("app-main").down("mainView").setHidden(true);
+                     this.up("app-main").down("mainNewsInfo").setHidden(false);
+                     this.up("app-main").down("mainDept").setHidden(true);
+                     this.up("app-main").down("mainNewsInfoMore").setHidden(true);
+                     this.up("app-main").down("mainAdmin").setHidden(true);
+            	 }else{
+            		  this.up("app-main").down("mainView").setHidden(true);
+                      this.up("app-main").down("mainNewsInfo").setHidden(true);
+                      this.up("app-main").down("mainDept").setHidden(true);
+                      this.up("app-main").down("mainNewsInfoMore").setHidden(true);
+                      this.up("app-main").down("mainAdmin").setHidden(false);
+            	 }
              }  
         }
     },

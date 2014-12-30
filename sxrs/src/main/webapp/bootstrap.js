@@ -1527,7 +1527,6 @@ Ext.Microloader = Ext.Microloader || (function () {
                         url = manifest.indexOf(extension) === manifest.length - extension.length
                             ? manifest
                             : manifest + ".json";
-
                     Boot.fetch(url, function(result){
                         manifest = Ext.manifest = JSON.parse(result.content);
                         Microloader.load(manifest);

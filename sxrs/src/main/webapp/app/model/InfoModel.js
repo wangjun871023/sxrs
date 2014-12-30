@@ -3,7 +3,7 @@ Ext.define('app.model.InfoModel', {
     fields: [
         {name: 'id',  type: 'string'},
         {name: 'infoTitle',  type: 'string',convert:function(v,record){
-        	return "<a target='blank' href='info/showInfo.do?id="+record.data.id+"' title='"+v+"'>"+v+"</a>";
+        	return "<a target='blank' href='index.html?id="+record.data.id+"' title='"+v+"'>"+v+"</a>";
         }},
         {name: 'infoTime',  type: 'string'},
         {name: 'infoCount',  type: 'string'},
