@@ -8,7 +8,11 @@ Ext.define("app.view.main.admin.InfoTypeTree", {
     listeners:{
         itemclick:function(obj,record){
             if(record.isRoot()==false){
-            	
+            	this.up("app-main").down("infoGrid").getStore().load({
+            		params:{
+            			infoTypeId:record.getId()
+            		}
+            	});
             } 
         },
         beforerender:function(panel){

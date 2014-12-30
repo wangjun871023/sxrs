@@ -130,15 +130,15 @@ create table model_table(
 insert into model_table(id,model_name,menu_id) values('0001','部门人员维护','0001');
 insert into model_table(id,model_name,menu_id) values('0002','信息发布','0001');
 insert into model_table(id,model_name,menu_id) values('0003','个人信息','0001');
-insert into model_table(id,model_name,menu_id) values('0003','当前关注','0001');
+insert into model_table(id,model_name,menu_id) values('0004','当前关注','0001');
 --部门管理员菜单
-insert into model_table(id,model_name,menu_id) values('0004','信息发布','0002');
-insert into model_table(id,model_name,menu_id) values('0005','人员维护','0002');
-insert into model_table(id,model_name,menu_id) values('0006','个人信息','0002');
+insert into model_table(id,model_name,menu_id) values('0005','信息发布','0002');
+insert into model_table(id,model_name,menu_id) values('0006','人员维护','0002');
+insert into model_table(id,model_name,menu_id) values('0007','个人信息','0002');
 --普通用户菜单
-insert into model_table(id,model_name,menu_id) values('0007','网上投票','0003');
-insert into model_table(id,model_name,menu_id) values('0008','网上考试','0003');
-insert into model_table(id,model_name,menu_id) values('0009','网上测评','0003');
-insert into model_table(id,model_name,menu_id) values('0010','个人信息','0003');
+insert into model_table(id,model_name,menu_id) values('0008','网上投票','0003');
+insert into model_table(id,model_name,menu_id) values('0009','网上考试','0003');
+insert into model_table(id,model_name,menu_id) values('0010','网上测评','0003');
+insert into model_table(id,model_name,menu_id) values('0011','个人信息','0003');
 
 

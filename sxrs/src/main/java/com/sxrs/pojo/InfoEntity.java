@@ -5,14 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.GenericGenerator;
+
+import com.macrosoft.core.BaseForm;
 
 /**
  * InfoEntity entity. @author MyEclipse Persistence Tools
  */
 @Entity
 @Table(name = "info_table", catalog = "sxrs")
-public class InfoEntity implements java.io.Serializable {
+public class InfoEntity extends BaseForm implements java.io.Serializable {
 
 	// Fields
 

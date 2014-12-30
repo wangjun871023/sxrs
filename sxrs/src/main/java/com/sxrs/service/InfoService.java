@@ -12,7 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.macrosoft.common.collection.CollectionUtils;
+import com.macrosoft.common.date.DateUtils;
+import com.macrosoft.common.log.LoggerUtils;
+import com.macrosoft.common.string.StringUtils;
 import com.macrosoft.core.BaseForm;
+import com.macrosoft.core.HqlCondition;
+import com.macrosoft.core.orm.Page;
 import com.sxrs.dao.IInfoDao;
 import com.sxrs.pojo.InfoEntity;
 
@@ -26,8 +32,42 @@ public class InfoService implements IInfoService {
 	private IInfoDao infoDao;
 
 	@Override
-	public List<InfoEntity> loadInfos() {
-		return infoDao.loadInfos();
+	public Page<InfoEntity> loadInfos(InfoEntity info) {
+		Page page = null;
+		List param = null;
+		HqlCondition condition = null;
+		try {
+			info.initPageInfo();
+			condition = new HqlCondition();
+			condition.setSelStr(" select infoEntity");
+			condition.setFromStr(" from InfoEntity infoEntity");
+			condition.setWhereStr(" where 1=1 ");
+			if (info != null) {
+				param = new ArrayList();
+				if (!StringUtils.isEmpty(info.getInfoTypeId())) {
+					param.add(info.getInfoTypeId());
+					condition.setWhereStr(" and infoTypeId= ? ");
+				}
+				/*
+				 * if (info.getId() != null) {
+				 * condition.setWhereStr(" and id = ? ");
+				 * param.add(info.getId()); } if
+				 * (!StringUtils.isEmpty(info.getInfoTitle())) {
+				 * condition.setWhereStr(" and roleName like ?"); param.add("%"
+				 * + info.getInfoTitle().trim() + "%"); }
+				 */
+				page = infoDao.loadInfos(info, condition, param);
+			}
+			return page;
+		} catch (Exception e) {
+			e.printStackTrace();
+			LoggerUtils.logger.error(e, e);
+		} finally {
+			condition = null;
+			CollectionUtils.clearList(param);
+			param = null;
+		}
+		return null;
 	}
 
 	@Override
@@ -63,10 +103,46 @@ public class InfoService implements IInfoService {
 	}
 
 	@Override
-	public void addInfo(InfoEntity info, String infoTypeId) {
+	public void addInfo(InfoEntity info) {
 		// 提取图片
-		String content = info.getInfoContent();
-		Matcher matcher = PATTERN.matcher(content);
+		List list = getContentImages(info.getInfoContent());
+		String src = "";
+		if (!CollectionUtils.emptyList(list)) {
+			// 取第一张图片的src
+			src = (String) list.get(0);
+		}
+		// 如果有图片设置url
+		info.setPictureUrl(src);
+		// info时间
+		info.setInfoTime(DateUtils.getServerCurrentDateAndTime());
+		// info浏览数
+		info.setInfoCount("0");
+		infoDao.saveInfoEntity(info);
+	}
+
+	@Override
+	public void editInfo(InfoEntity info) {
+		// 提取图片
+		List list = getContentImages(info.getInfoContent());
+		if (!CollectionUtils.emptyList(list)) {
+			// 取第一张图片的src
+			String src = (String) list.get(0);
+			// 如果有图片设置url
+			info.setPictureUrl(src);
+		}
+		// info时间
+		info.setInfoTime(DateUtils.getServerCurrentDateAndTime());
+		infoDao.saveInfoEntity(info);
+	}
+
+	/**
+	 * 提取图片
+	 * 
+	 * @param infoContent
+	 * @return
+	 */
+	private List getContentImages(String infoContent) {
+		Matcher matcher = PATTERN.matcher(infoContent);
 		List list = new ArrayList();
 		while (matcher.find()) {
 			String group = matcher.group(1);
@@ -82,5 +158,17 @@ public class InfoService implements IInfoService {
 				list.add(group.split("\\s")[0]);
 			}
 		}
+		return list;
 	}
+
+	@Override
+	public InfoEntity getInfoById(String id) {
+		return infoDao.getInfoEntityById(id);
+	}
+
+	@Override
+	public void deleteInfos(String ids) throws Exception {
+		infoDao.deleteInfos(ids);
+	}
+
 }

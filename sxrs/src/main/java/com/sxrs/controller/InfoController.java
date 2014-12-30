@@ -1,8 +1,5 @@
 package com.sxrs.controller;  
   
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,15 +8,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.macrosoft.common.constant.CommonConst;
-import com.macrosoft.common.file.FileUtils;
-import com.macrosoft.common.upload.UploadUtils;
 import com.macrosoft.core.BaseForm;
+import com.macrosoft.core.orm.Page;
 import com.macrosoft.core.utils.ResponseUtils;
 import com.sxrs.pojo.InfoEntity;
 import com.sxrs.service.IInfoService;
@@ -34,10 +31,10 @@ public class InfoController {
     
     
     @RequestMapping(value="/loadInfo", method=RequestMethod.GET)  
-    public @ResponseBody Map<String, Object> loadModelTree() {  
+    public @ResponseBody Map<String, Object> loadInfo(InfoEntity info) {  
     	try {
-    		List <InfoEntity> infos = infoService.loadInfos();
-     		return ResponseUtils.sendList(infos);  
+    		Page<InfoEntity> page = infoService.loadInfos(info);
+     		return ResponseUtils.sendPage(page);  
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e, e);
@@ -74,10 +71,10 @@ public class InfoController {
     }
 
     @RequestMapping(value="/addInfo")  
-    public @ResponseBody Map<String, Object> addInfo(InfoEntity info,String infoTypeId) {  
+    public @ResponseBody Map<String, Object> addInfo(InfoEntity info) {  
     	try {
     		BaseForm tmp = new BaseForm();
-    		infoService.addInfo(info,infoTypeId);
+    		infoService.addInfo(info);
     		tmp.setSuccess(true);
     		return ResponseUtils.sendBaseForm(tmp);
 		} catch (Exception e) {
@@ -86,5 +83,47 @@ public class InfoController {
 		}
 		return null;
     }  
+    
+    @RequestMapping(value="/editInfo")  
+    public @ResponseBody Map<String, Object> editInfo(InfoEntity info) {  
+    	try {
+    		BaseForm tmp = new BaseForm();
+    		infoService.editInfo(info);
+    		tmp.setSuccess(true);
+    		return ResponseUtils.sendBaseForm(tmp);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e, e);
+		}
+		return null;
+    }  
+    
+    @RequestMapping(value="/deleteInfo")  
+    public @ResponseBody Map<String, Object> deleteInfo(String ids) {  
+    	try {
+    		BaseForm tmp = new BaseForm();
+    		infoService.deleteInfos(ids);
+    		tmp.setSuccess(true);
+    		return ResponseUtils.sendBaseForm(tmp);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e, e);
+		}
+		return null;
+    }  
+    
+    
+     /**
+	 * 使用@ModelAttribute, 实现Struts2 Preparable二次部分绑定的效果,先根据form的id从数据库查出Example对象,
+	 * 再把Form提交的内容绑定到该对象上。
+	 * 因为仅update()方法的form中有id属性，因此本方法在该方法中执行.
+	 */
+	@ModelAttribute("preEditInfo")
+	public InfoEntity preEditInfo(@RequestParam(value = "id", required = false) String id) {
+		if (id != null) {
+			return infoService.getInfoById(id);
+		}
+		return null;
+	}
     
 }  
